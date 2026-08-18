@@ -12,11 +12,13 @@ import DataSection from '../components/data-section';
 import AboutCyberSection from '../components/about-cyber-section';
 import { Footer } from '../components/portfolio-sections';
 import { LanguageProvider } from '../components/language-context';
+import LanguagePersistence from '../components/language-persistence';
 
 export default function Page() {
   return (
     <LanguageProvider>
       <main>
+        <LanguagePersistence />
         <ThemeController />
         <Navigation />
         <HomeHero />
