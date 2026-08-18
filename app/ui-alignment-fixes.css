@@ -1,0 +1,74 @@
+/* Final UI alignment fixes */
+
+/* Keep the floating banner minimize control fully inside the card and away from the CTA. */
+.alternanceBanner {
+  padding-right: 56px;
+}
+
+.alternanceMinimize {
+  top: 10px;
+  right: 12px;
+  z-index: 3;
+  box-shadow: 0 8px 22px rgba(0,0,0,.28);
+}
+
+.alternanceCta {
+  min-height: 40px;
+  padding: 0 14px;
+  font-size: 12px;
+}
+
+/* Reserve the same vertical space for project tags so every separator/title row starts on the same line. */
+.projectShowcaseTags {
+  min-height: 58px;
+  align-content: flex-start;
+  padding-bottom: 14px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid rgba(48, 151, 255, .75);
+}
+
+/* Keep each project name and its report button aligned on the same top line. */
+.projectShowcaseTitleRow {
+  align-items: flex-start;
+  min-height: 48px;
+}
+
+.projectShowcaseContent h3 {
+  min-height: 46px;
+  display: flex;
+  align-items: flex-start;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.projectShowcaseButton {
+  margin-top: 0;
+}
+
+.projectShowcaseMeta {
+  min-height: 66px;
+}
+
+@media (max-width: 760px) {
+  .projectShowcaseTags,
+  .projectShowcaseTitleRow,
+  .projectShowcaseContent h3,
+  .projectShowcaseMeta {
+    min-height: 0;
+  }
+
+  .alternanceBanner {
+    padding-right: 48px;
+  }
+
+  .alternanceMinimize {
+    top: 8px;
+    right: 10px;
+  }
+
+  .alternanceCta {
+    min-height: 38px;
+    padding: 0 12px;
+    font-size: 11px;
+  }
+}
