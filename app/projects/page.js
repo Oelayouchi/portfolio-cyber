@@ -51,7 +51,7 @@ function ProjectsContent(){
 
       <section className="shell allProjectsShell">
         <div className="allProjectsHeader">
-          <div><span className="eyebrow">PORTFOLIO CYBER</span><h1>{text.title}</h1><p>{text.description}</p></div>
+          <div><h1>{text.title}</h1><p>{text.description}</p></div>
         </div>
         <div className="projectShowcaseGrid allProjectsGrid">
           {projects.map((project,index)=><ProjectShowcaseCard key={project.title} project={project} slug={projectSlugs[index] || `projet-${index + 1}`} />)}
