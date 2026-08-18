@@ -1,17 +1,7 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-
-const links = [
-  { href: '#about', label: 'À propos' },
-  { href: '#experience', label: 'Expérience' },
-  { href: '#projects', label: 'Projets' },
-  { href: '#awards', label: 'Distinctions' },
-  { href: '#data', label: 'Cyber' },
-  { href: '#certifications', label: 'Certifications' },
-  { href: '#education', label: 'Diplômes' },
-  { href: '#contact', label: 'Contact' },
-];
+import { useEffect, useMemo, useState } from 'react';
+import { useLanguage } from './language-context';
 
 function ThemeIcon({ type }) {
   if (type === 'moon') {
@@ -21,8 +11,20 @@ function ThemeIcon({ type }) {
 }
 
 export default function Navigation() {
+  const { language, setLanguage, t } = useLanguage();
   const [active, setActive] = useState('#about');
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const links = useMemo(() => [
+    { href: '#about', label: t('navAbout') },
+    { href: '#experience', label: t('navExperience') },
+    { href: '#projects', label: t('navProjects') },
+    { href: '#awards', label: t('navAwards') },
+    { href: '#data', label: t('navCyber') },
+    { href: '#certifications', label: t('navCerts') },
+    { href: '#education', label: t('navEducation') },
+    { href: '#contact', label: t('navContact') },
+  ], [t, language]);
 
   useEffect(() => {
     let ticking = false;
@@ -52,7 +54,7 @@ export default function Navigation() {
       window.removeEventListener('scroll', onScroll);
       window.removeEventListener('resize', onScroll);
     };
-  }, []);
+  }, [links]);
 
   const selectLink = (href) => {
     setActive(href);
@@ -69,6 +71,18 @@ export default function Navigation() {
               <a key={link.href} className={active === link.href ? 'active' : ''} href={link.href} onClick={() => selectLink(link.href)}>{link.label}</a>
             ))}
           </div>
+
+          <label className="languageSelector" aria-label={t('language')}>
+            <span className="languageGlobe" aria-hidden="true">🌐</span>
+            <select value={language} onChange={(event) => setLanguage(event.target.value)}>
+              <option value="fr">FR</option>
+              <option value="en">EN</option>
+              <option value="ar">AR</option>
+              <option value="es">ES</option>
+              <option value="de">DE</option>
+            </select>
+          </label>
+
           <div className="themeToggle" aria-label="Sélecteur de thème visuel">
             <span><ThemeIcon type="moon" /></span>
             <span className="themeActive"><ThemeIcon type="sun" /></span>
