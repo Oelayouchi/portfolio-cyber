@@ -2,7 +2,7 @@ import { SectionLabel } from './ui';
 
 const education = [
   {
-    year: 'Depuis sept. 2026',
+    year: '2026',
     degree: 'Bachelor Cybersécurité',
     institution: 'NEXA DIGITAL SCHOOL — LYON',
     logo: '/schools/nexa.svg',
