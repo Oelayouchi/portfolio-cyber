@@ -1,1 +1,22 @@
-/* Navigation identique au portfolio Data */.heroSection::before,.heroSection::after,.scrollHint{display:none!important}.navlinks a,.mobileMenu a{font-family:Arial,Helvetica,sans-serif!important;font-size:15px;font-weight:400!important;letter-spacing:0!important}.navlinks a.active,.mobileMenu a.active{font-weight:400!important}.navBar{position:fixed!important;top:0!important;right:0!important;left:0!important;z-index:9999!important;width:100%!important}body{padding-top:80px!important}section[id],[id]{scroll-margin-top:96px}@media(max-width:760px){body{padding-top:72px!important}section[id],[id]{scroll-margin-top:84px}}
+/* Navigation identique au portfolio Data */
+.heroSection::before,.heroSection::after,.scrollHint{display:none!important}
+.navlinks a,.mobileMenu a{font-family:Arial,Helvetica,sans-serif!important;font-size:15px;font-weight:400!important;letter-spacing:0!important}
+.navlinks a.active,.mobileMenu a.active{font-weight:400!important}
+.navBar{position:fixed!important;top:0!important;right:0!important;left:0!important;z-index:9999!important;width:100%!important}
+body{padding-top:80px!important}
+section[id],[id]{scroll-margin-top:96px}
+
+.languageSelector{display:flex;align-items:center;gap:5px;height:36px;padding:0 8px;border:1px solid #1d62aa;border-radius:999px;background:#07101d;color:#d7e4f5}
+.languageGlobe{font-size:14px;line-height:1}
+.languageSelector select{min-width:42px;border:0;outline:0;background:transparent;color:inherit;font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:500;cursor:pointer}
+.languageSelector option{background:#07101d;color:#fff}
+html[data-theme='light'] .languageSelector{border-color:#8eb9e6;background:#e6f1fc;color:#174f8e}
+html[data-theme='light'] .languageSelector option{background:#fff;color:#0b1f3a}
+html[dir='rtl'] body{text-align:right}
+html[dir='rtl'] .homeHeroMain,html[dir='rtl'] .split,html[dir='rtl'] .dataPanelBody,html[dir='rtl'] .contactEnhanced{direction:rtl}
+html[dir='rtl'] .homeHeroActions,html[dir='rtl'] .contactQuickActions{justify-content:flex-start}
+html[dir='rtl'] .experienceMetaTop{align-items:flex-start;text-align:left}
+
+@media(max-width:1180px){.navlinks{gap:18px!important}.navlinks a{font-size:13px!important}.navRight{gap:12px!important}}
+@media(max-width:900px){.languageSelector{margin-left:auto}.navRight{gap:9px!important}}
+@media(max-width:760px){body{padding-top:72px!important}section[id],[id]{scroll-margin-top:84px}.languageSelector{height:34px;padding:0 7px}.languageGlobe{font-size:13px}.languageSelector select{font-size:11px}}
