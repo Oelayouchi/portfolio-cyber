@@ -1,0 +1,64 @@
+import AvailabilityDataPanel from './availability-data-panel';
+
+const tools=[
+  {name:'Wireshark',icon:'network',tone:'sql'},
+  {name:'Wazuh',icon:'shield',tone:'powerbi'},
+  {name:'Splunk',icon:'search',tone:'python'},
+  {name:'Linux',icon:'terminal',tone:'excel'},
+  {name:'Windows Server',icon:'server',tone:'cpp'},
+  {name:'Active Directory',icon:'users',tone:'stm32'},
+  {name:'Docker',icon:'container',tone:'autosar'},
+  {name:'Ansible',icon:'automation',tone:'doors'},
+  {name:'Terraform',icon:'blocks',tone:'iso'},
+  {name:'Python',icon:'python',tone:'fpga'},
+  {name:'TCP/IP',icon:'network',tone:'en'}
+];
+
+const highlights=[
+  {value:'3+',label:"Années d’expérience"},
+  {value:'10+',label:'Projets techniques'},
+  {value:'4',label:'Prix & distinctions'},
+  {value:'3',label:'Certifications'},
+  {value:'3',label:'Domaines clés',detail:<>Systèmes embarqués<br/>Sûreté de fonctionnement<br/>Cybersécurité</>}
+];
+
+const career=[
+  {type:'search',href:'#contact',company:'À la recherche',role:'D’une alternance en cybersécurité',stack:'Cybersécurité · Alternance'},
+  {href:'#experience-alstom',logo:'/companies/alstom.png',period:'2024',company:'Alstom',role:'Ingénieur sécurité ferroviaire',stack:'FPGA · EN 50129'},
+  {href:'#experience-continental',logo:'/companies/continental.png',period:'2023 – 2024',company:'Continental',role:'Ingénieur sécurité logicielle automobile',stack:'AUTOSAR · DOORS · ISO 26262'},
+  {href:'#experience-parcelhome',logo:'/companies/parcelhom.png',period:'2022 – 2023',company:'ParcelHome',role:'Développeur électronique & logiciel',stack:'C/C++ · Python · STM32'},
+  {type:'stages',company:'Stages',stages:[
+    {href:'#experience-parcelhome-stage',logo:'/companies/parcelhom.png',name:'ParcelHome',period:'2021 – 2022'},
+    {href:'#experience-ocp',logo:'/companies/ocp.png',name:'OCP',period:'2020'},
+    {href:'#experience-ocp-2019',logo:'/companies/ocp.png',name:'OCP',period:'2019'},
+    {href:'#experience-onda-2018',logo:'/companies/onda.png',name:'ONDA',period:'2018'}
+  ]}
+];
+
+function HeroIcon({type}){
+  const common={width:21,height:21,viewBox:'0 0 24 24',fill:'none',stroke:'currentColor',strokeWidth:2,strokeLinecap:'round',strokeLinejoin:'round','aria-hidden':'true'};
+  if(type==='download')return <svg {...common}><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>;
+  if(type==='mail')return <svg {...common}><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>;
+  return null;
+}
+
+function ToolLogo({icon}){
+  const common={viewBox:'0 0 32 32',width:30,height:30,'aria-hidden':'true'};
+  if(icon==='network')return <svg {...common} fill="none" stroke="currentColor" strokeWidth="2"><circle cx="7" cy="16" r="3"/><circle cx="25" cy="8" r="3"/><circle cx="25" cy="24" r="3"/><path d="M10 15l12-6M10 17l12 6"/></svg>;
+  if(icon==='shield')return <svg {...common} fill="none" stroke="currentColor" strokeWidth="2"><path d="M16 3 27 7v8c0 7-4.7 11.8-11 14C9.7 26.8 5 22 5 15V7l11-4Z"/><path d="m11 16 3 3 7-8"/></svg>;
+  if(icon==='search')return <svg {...common} fill="none" stroke="currentColor" strokeWidth="2"><circle cx="13" cy="13" r="8"/><path d="m19 19 8 8"/></svg>;
+  if(icon==='terminal')return <svg {...common} fill="none" stroke="currentColor" strokeWidth="2"><rect x="4" y="5" width="24" height="22" rx="2"/><path d="m9 12 5 4-5 4M17 21h6"/></svg>;
+  if(icon==='server')return <svg {...common} fill="none" stroke="currentColor" strokeWidth="2"><rect x="5" y="5" width="22" height="9" rx="2"/><rect x="5" y="18" width="22" height="9" rx="2"/><circle cx="10" cy="9.5" r="1" fill="currentColor"/><circle cx="10" cy="22.5" r="1" fill="currentColor"/></svg>;
+  if(icon==='users')return <svg {...common} fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="11" r="4"/><circle cx="23" cy="12" r="3"/><path d="M4 27c1-6 4-9 8-9s7 3 8 9M20 20c4 0 7 2 8 7"/></svg>;
+  if(icon==='container')return <svg {...common} fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 10h24v14H4zM4 14h24M10 10v14M16 10v14M22 10v14"/></svg>;
+  if(icon==='automation')return <svg {...common} fill="none" stroke="currentColor" strokeWidth="2"><circle cx="16" cy="16" r="10"/><path d="M16 6v20M6 16h20M9 9l14 14M23 9 9 23"/></svg>;
+  if(icon==='blocks')return <svg {...common} fill="none" stroke="currentColor" strokeWidth="2"><path d="m16 4 7 4-7 4-7-4 7-4ZM9 14l7 4 7-4M9 20l7 4 7-4"/></svg>;
+  if(icon==='python')return <svg {...common} fill="none" stroke="currentColor" strokeWidth="2"><path d="M8 15V9c0-4 3-6 8-6h4c3 0 5 2 5 5v5H14c-4 0-6 2-6 6v2"/><circle cx="19" cy="7" r="1" fill="currentColor"/><path d="M24 17v6c0 4-3 6-8 6h-4c-3 0-5-2-5-5v-5h11c4 0 6-2 6-6v-2"/><circle cx="13" cy="25" r="1" fill="currentColor"/></svg>;
+  return <svg {...common} fill="none" stroke="currentColor" strokeWidth="2"><rect x="7" y="7" width="18" height="18" rx="2"/></svg>;
+}
+
+function SearchLogo(){return <span className="homeSearchLogo" aria-hidden="true"><svg viewBox="0 0 32 32"><circle cx="13" cy="13" r="8"/><path d="m19 19 8 8"/></svg></span>}
+
+export default function HomeHero(){
+  return <section id="top" className="homeHero"><div className="shell homeHeroShell"><div className="homeHeroMain"><div className="homeIdentityCard"><div className="homeIdentityVisual"><img src="/profile/favicon.png" alt="Identité visuelle Oussama EL AYOUCHI" /></div><div className="homeIdentityCopy"><strong>Oussama EL AYOUCHI</strong><span>Ingénieur systèmes embarqués & Safety</span><p>Ingénieur en systèmes embarqués et sûreté de fonctionnement, j’ai évolué du développement électronique et logiciel vers la sûreté automobile et ferroviaire. Aujourd’hui, je me spécialise en cybersécurité afin de mettre cette expérience au service de la protection des systèmes d’information.</p></div></div><div className="homeHeroIntro"><h1>Oussama<br/><span>EL AYOUCHI</span></h1><p>Ingénieur systèmes embarqués & Safety, actuellement en reconversion vers la <strong>cybersécurité.</strong></p><div className="homeHeroActions"><a className="button primary" href="#contact"><HeroIcon type="mail"/>Me contacter</a><a className="button secondary" href="/documents/CV_Oussama_EL_AYOUCHI_Cyber.pdf" target="_blank" rel="noreferrer"><HeroIcon type="download"/>Télécharger mon CV</a></div><AvailabilityDataPanel/></div><div className="homeHighlights" aria-label="Chiffres clés">{highlights.map(item=><div className="homeHighlightCard" key={item.label}><strong>{item.value}</strong><span>{item.label}</span>{item.detail&&<small>{item.detail}</small>}</div>)}</div></div><div className="homeTools" aria-label="Technologies principales">{tools.map(tool=><div className={`homeTool homeTool-${tool.tone}`} key={tool.name} title={tool.name}><span className="homeToolLogo"><ToolLogo icon={tool.icon}/></span><strong>{tool.name}</strong></div>)}</div><div className="homeCareer"><div className="homeCareerTitle"><span>PARCOURS</span><h2>Expériences professionnelles</h2></div><div className="homeCareerLine">{career.map(item=>{if(item.type==='stages')return <div className="homeCareerItem homeCareerStages" key="stages"><span className="homeCareerDot"/><strong>Stages</strong><div className="homeStageList">{item.stages.map(stage=><a href={stage.href} key={`${stage.name}-${stage.period}`}><img src={stage.logo} alt=""/><span><b>{stage.name}</b><small>{stage.period}</small></span></a>)}</div></div>;return <a className={`homeCareerItem${item.type==='search'?' homeCareerSearch':''}`} href={item.href} key={item.company}><span className="homeCareerDot"/><span className="homeCareerLogo">{item.type==='search'?<SearchLogo/>:<img src={item.logo} alt={`Logo ${item.company}`}/>}</span>{item.period&&<small>{item.period}</small>}<strong>{item.company}</strong><p>{item.role}</p><em>{item.stack}</em></a>})}</div></div></div></section>;
+}
