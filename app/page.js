@@ -11,23 +11,26 @@ import HomeHero from '../components/home-hero';
 import DataSection from '../components/data-section';
 import AboutCyberSection from '../components/about-cyber-section';
 import { Footer } from '../components/portfolio-sections';
+import { LanguageProvider } from '../components/language-context';
 
 export default function Page() {
   return (
-    <main>
-      <ThemeController />
-      <Navigation />
-      <HomeHero />
-      <AboutCyberSection />
-      <ExperienceSection />
-      <ProjectsSection />
-      <AwardsSection />
-      <DataSection />
-      <CertificationsSection />
-      <EducationInterestsSection />
-      <ContactSection />
-      <Footer />
-      <AlternanceBanner />
-    </main>
+    <LanguageProvider>
+      <main>
+        <ThemeController />
+        <Navigation />
+        <HomeHero />
+        <AboutCyberSection />
+        <ExperienceSection />
+        <ProjectsSection />
+        <AwardsSection />
+        <DataSection />
+        <CertificationsSection />
+        <EducationInterestsSection />
+        <ContactSection />
+        <Footer />
+        <AlternanceBanner />
+      </main>
+    </LanguageProvider>
   );
 }
