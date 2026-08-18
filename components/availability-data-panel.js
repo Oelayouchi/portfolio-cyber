@@ -11,41 +11,47 @@ export default function AvailabilityDataPanel() {
         <span className="availabilityV2Arrow" aria-hidden="true">›</span>
       </a>
 
-      <div className="availabilityV2Dashboard" aria-label="Aperçu cybersécurité">
-        <div className="availabilityV2Card">
-          <div className="availabilityV2PlotSlot">
-            <div className="availabilityV2BarArea">
-              <div className="availabilityV2Bars"><i/><i/><i/><i/></div>
-            </div>
+      <div className="availabilityV2Dashboard cyberDashboard" aria-label="Aperçu cybersécurité">
+        <div className="availabilityV2Card cyberVisualCard">
+          <div className="cyberVisualTitle">RÉSEAU & DÉTECTION</div>
+          <div className="networkMap" aria-hidden="true">
+            <span className="networkNode nodeInternet">WAN</span>
+            <span className="networkLine lineOne" />
+            <span className="networkNode nodeFirewall">FW</span>
+            <span className="networkLine lineTwo" />
+            <span className="networkNode nodeSoc">SOC</span>
+            <span className="networkBranch branchOne" />
+            <span className="networkBranch branchTwo" />
+            <span className="networkNode nodePc">PC</span>
+            <span className="networkNode nodeServer">SRV</span>
           </div>
-          <div className="availabilityV2Months"><small>Réseau</small><small>SIEM</small><small>Linux</small><small>AD</small></div>
+          <div className="cyberVisualFooter"><span>TCP/IP</span><span>Wireshark</span><span>IDS/IPS</span></div>
         </div>
 
-        <div className="availabilityV2Card">
-          <div className="availabilityV2PlotSlot">
-            <svg className="availabilityV2Trend" viewBox="0 0 180 120" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-              <line x1="12" y1="100" x2="168" y2="100"/>
-              <line x1="12" y1="68" x2="168" y2="68"/>
-              <line x1="12" y1="36" x2="168" y2="36"/>
-              <polyline points="20,88 52,72 84,59 116,42 150,24"/>
-              <circle cx="20" cy="88" r="4"/><circle cx="52" cy="72" r="4"/><circle cx="84" cy="59" r="4"/><circle cx="116" cy="42" r="4"/><circle cx="150" cy="24" r="4"/>
+        <div className="availabilityV2Card cyberVisualCard">
+          <div className="cyberVisualTitle">SOC / SIEM</div>
+          <div className="socConsole" aria-hidden="true">
+            <div className="socConsoleTop"><i/><i/><i/><span>security-events.log</span></div>
+            <p><b>[INFO]</b> Auth success — 10.0.0.12</p>
+            <p><b>[WARN]</b> Multiple failed logins</p>
+            <p className="socAlert"><b>[ALERT]</b> Suspicious PowerShell</p>
+            <p><b>[MITRE]</b> T1059 · Command Shell</p>
+          </div>
+          <div className="cyberVisualFooter"><span>Wazuh</span><span>Splunk</span><span>Logs</span></div>
+        </div>
+
+        <div className="availabilityV2Card cyberVisualCard">
+          <div className="cyberVisualTitle">SYSTÈMES & IDENTITÉS</div>
+          <div className="shieldScene" aria-hidden="true">
+            <svg className="shieldIcon" viewBox="0 0 100 116">
+              <path d="M50 5 91 20v31c0 29-17 49-41 59C26 100 9 80 9 51V20L50 5Z"/>
+              <path d="m30 57 13 13 28-31"/>
             </svg>
+            <span className="shieldTag tagAd">AD</span>
+            <span className="shieldTag tagLinux">Linux</span>
+            <span className="shieldTag tagWin">Windows</span>
           </div>
-          <div className="availabilityV2Weeks"><small>Logs</small><small>Tri</small><small>Analyse</small><small>Réponse</small><small>Suivi</small></div>
-        </div>
-
-        <div className="availabilityV2Card availabilityV2DonutCard">
-          <div className="availabilityV2PlotSlot">
-            <div className="availabilityV2DonutRow">
-              <div className="availabilityV2Donut" aria-hidden="true" />
-              <div className="availabilityV2Legend">
-                <span><i className="availabilityV2Green"/>Réseau</span>
-                <span><i className="availabilityV2Blue"/>SIEM</span>
-                <span><i className="availabilityV2Dark"/>Systèmes</span>
-              </div>
-            </div>
-          </div>
-          <div className="availabilityV2BottomSpacer" aria-hidden="true" />
+          <div className="cyberVisualFooter"><span>IAM</span><span>GPO</span><span>Hardening</span></div>
         </div>
       </div>
     </div>
