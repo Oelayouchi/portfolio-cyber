@@ -4,10 +4,49 @@ import { useState } from 'react';
 import { SectionLabel } from './ui';
 import { useLanguage } from './language-context';
 
+const formCopy = {
+  fr: {
+    emailPlaceholder: 'nom@entreprise.com',
+    subjectPlaceholder: 'Proposition d’alternance en cybersécurité, échange professionnel…',
+    messagePlaceholder: 'Écrivez votre message ici…',
+    success: 'Message envoyé. Je vous répondrai dès que possible.',
+    error: 'Impossible d’envoyer le message.',
+  },
+  en: {
+    emailPlaceholder: 'name@company.com',
+    subjectPlaceholder: 'Cybersecurity apprenticeship opportunity, professional discussion…',
+    messagePlaceholder: 'Write your message here…',
+    success: 'Message sent. I will reply as soon as possible.',
+    error: 'Unable to send the message.',
+  },
+  ar: {
+    emailPlaceholder: 'name@company.com',
+    subjectPlaceholder: 'فرصة تدريب بالتناوب في الأمن السيبراني، تواصل مهني…',
+    messagePlaceholder: 'اكتب رسالتك هنا…',
+    success: 'تم إرسال الرسالة. سأجيب في أقرب وقت ممكن.',
+    error: 'تعذر إرسال الرسالة.',
+  },
+  es: {
+    emailPlaceholder: 'nombre@empresa.com',
+    subjectPlaceholder: 'Propuesta de alternancia en ciberseguridad, contacto profesional…',
+    messagePlaceholder: 'Escribe tu mensaje aquí…',
+    success: 'Mensaje enviado. Responderé lo antes posible.',
+    error: 'No se ha podido enviar el mensaje.',
+  },
+  de: {
+    emailPlaceholder: 'name@unternehmen.de',
+    subjectPlaceholder: 'Cybersecurity-Ausbildung, beruflicher Austausch…',
+    messagePlaceholder: 'Schreiben Sie Ihre Nachricht hier…',
+    success: 'Nachricht gesendet. Ich antworte so bald wie möglich.',
+    error: 'Die Nachricht konnte nicht gesendet werden.',
+  },
+};
+
 export default function ContactSection() {
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
   const [status, setStatus] = useState('idle');
   const [message, setMessage] = useState('');
+  const copy = formCopy[language] || formCopy.fr;
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -29,13 +68,13 @@ export default function ContactSection() {
         body: JSON.stringify(payload),
       });
       const data = await response.json();
-      if (!response.ok) throw new Error(data?.error || 'Message error');
+      if (!response.ok) throw new Error(data?.error || copy.error);
       form.reset();
       setStatus('success');
-      setMessage('✓');
+      setMessage(copy.success);
     } catch (error) {
       setStatus('error');
-      setMessage(error.message || 'Error');
+      setMessage(error.message || copy.error);
     }
   }
 
@@ -54,9 +93,9 @@ export default function ContactSection() {
       <div className="contactFormPanel">
         <div className="contactFormHeading"><span>{t('emailLabel')}</span><h3>{t('sendMessage')}</h3></div>
         <form className="contactForm" onSubmit={handleSubmit}>
-          <label>{t('yourEmail')}<input type="email" name="email" placeholder="name@company.com" autoComplete="email" required /></label>
-          <label>{t('subject')}<input type="text" name="subject" placeholder="…" maxLength={160} required /></label>
-          <label>{t('description')}<textarea name="description" placeholder="…" rows={6} maxLength={4000} required /></label>
+          <label>{t('yourEmail')}<input type="email" name="email" placeholder={copy.emailPlaceholder} autoComplete="email" required /></label>
+          <label>{t('subject')}<input type="text" name="subject" placeholder={copy.subjectPlaceholder} maxLength={160} required /></label>
+          <label>{t('description')}<textarea name="description" placeholder={copy.messagePlaceholder} rows={6} maxLength={4000} required /></label>
           <button className="button primary contactSubmitButton" type="submit" disabled={status === 'sending'}>{status === 'sending' ? t('sending') : t('send')}<span aria-hidden="true">↗</span></button>
           {message && <p className={`contactFormStatus ${status}`} role="status">{message}</p>}
         </form>
