@@ -13,11 +13,11 @@ const projectVisuals = {
 const availableReports = new Set(['balance-numerique','station-meteo']);
 
 const labels = {
-  fr:{report:'VOIR LE RAPPORT',reportTitle:'RAPPORT DU PROJET',close:'Fermer',read:'Lecture intégrée au portfolio. Les contrôles de téléchargement sont masqués dans la visionneuse.',tech:'Technologies utilisées',preview:'Aperçu du projet'},
-  en:{report:'VIEW REPORT',reportTitle:'PROJECT REPORT',close:'Close',read:'Embedded reading in the portfolio. Download controls are hidden in the viewer.',tech:'Technologies used',preview:'Project preview'},
-  ar:{report:'عرض التقرير',reportTitle:'تقرير المشروع',close:'إغلاق',read:'قراءة مدمجة داخل ملف الأعمال. عناصر تنزيل الملف مخفية في العارض.',tech:'التقنيات المستخدمة',preview:'معاينة المشروع'},
-  es:{report:'VER INFORME',reportTitle:'INFORME DEL PROYECTO',close:'Cerrar',read:'Lectura integrada en el portfolio. Los controles de descarga están ocultos.',tech:'Tecnologías utilizadas',preview:'Vista previa del proyecto'},
-  de:{report:'BERICHT ANSEHEN',reportTitle:'PROJEKTBERICHT',close:'Schließen',read:'Der Bericht ist im Portfolio eingebettet. Download-Steuerelemente sind ausgeblendet.',tech:'Verwendete Technologien',preview:'Projektvorschau'}
+  fr:{report:'VOIR LE RAPPORT',reportTitle:'RAPPORT DU PROJET',close:'Fermer',tech:'Technologies utilisées',preview:'Aperçu du projet'},
+  en:{report:'VIEW REPORT',reportTitle:'PROJECT REPORT',close:'Close',tech:'Technologies used',preview:'Project preview'},
+  ar:{report:'عرض التقرير',reportTitle:'تقرير المشروع',close:'إغلاق',tech:'التقنيات المستخدمة',preview:'معاينة المشروع'},
+  es:{report:'VER INFORME',reportTitle:'INFORME DEL PROYECTO',close:'Cerrar',tech:'Tecnologías utilizadas',preview:'Vista previa del proyecto'},
+  de:{report:'BERICHT ANSEHEN',reportTitle:'PROJEKTBERICHT',close:'Schließen',tech:'Verwendete Technologien',preview:'Projektvorschau'}
 };
 
 export default function ProjectShowcaseCard({ project, slug }) {
@@ -44,7 +44,6 @@ export default function ProjectShowcaseCard({ project, slug }) {
       <div className="projectModalContent reportModal" onClick={(event) => event.stopPropagation()}>
         <div className="reportModalHeader"><div><span>{text.reportTitle}</span><strong>{localized.title}</strong></div><button className="projectModalClose" type="button" onClick={() => setReportOpen(false)} aria-label={text.close}>×</button></div>
         {hasReport ? <iframe className="projectReportFrame" src={`${report}#toolbar=0&navpanes=0&scrollbar=1&view=FitH`} title={`${text.reportTitle} ${localized.title}`} /> : <div className="projectReportUnavailable" aria-hidden="true" />}
-        {hasReport && <p className="reportReadOnlyNote">{text.read}</p>}
       </div>
     </div>, document.body
   ) : null;
