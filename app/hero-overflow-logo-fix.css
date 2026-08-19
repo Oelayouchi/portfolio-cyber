@@ -1,0 +1,58 @@
+/* Targeted fix: navbar logo + hero cyber dashboard overflow. */
+
+/* Restore a clearly visible OE. mark without changing navbar height. */
+.navBar .brand{
+  flex:0 0 auto!important;
+  font-size:34px!important;
+  line-height:1!important;
+  font-weight:900!important;
+  letter-spacing:-.065em!important;
+  transform:none!important;
+}
+
+/* The dashboard must keep every label inside its own window. */
+.homeHeroIntro,
+.homeHeroIntro > *,
+.homeHeroMain,
+.homeHeroMain > *{min-width:0!important}
+
+.homeHeroIntro .availabilityV2Wrap{
+  min-width:0!important;
+  overflow:hidden!important;
+}
+
+/* The three dashboard columns/cells are allowed to shrink instead of pushing text outside. */
+.homeHeroIntro .availabilityV2Wrap > *,
+.homeHeroIntro .availabilityV2Wrap [class*="Grid"],
+.homeHeroIntro .availabilityV2Wrap [class*="grid"]{
+  min-width:0!important;
+  max-width:100%!important;
+}
+
+.homeHeroIntro .availabilityV2Wrap span,
+.homeHeroIntro .availabilityV2Wrap p,
+.homeHeroIntro .availabilityV2Wrap div{
+  max-width:100%;
+}
+
+/* Small technology pills: keep them inside their column and readable. */
+.homeHeroIntro .availabilityV2Wrap span{
+  overflow-wrap:anywhere;
+  word-break:normal;
+}
+
+@media(min-width:1181px){
+  /* Give the central dashboard a little more real width and slightly reduce side columns. */
+  .homeHeroMain{
+    grid-template-columns:minmax(255px,.70fr) minmax(0,1.58fr) minmax(255px,.68fr)!important;
+    gap:22px!important;
+  }
+}
+
+@media(max-width:1180px){
+  .navBar .brand{font-size:32px!important}
+}
+
+@media(max-width:760px){
+  .navBar .brand{font-size:30px!important}
+}
