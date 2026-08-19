@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { useLanguage } from './language-context';
 import { localizeProject } from './content-translations';
+import PdfViewer from './pdf-viewer';
 
 const projectVisuals = {
   'balance-numerique': '/projects/balance-numerique/images/image-01.png',
@@ -43,7 +44,7 @@ export default function ProjectShowcaseCard({ project, slug }) {
     <div className="projectModal" role="dialog" aria-modal="true" aria-label={`${text.reportTitle} ${localized.title}`} onClick={() => setReportOpen(false)}>
       <div className="projectModalContent reportModal" onClick={(event) => event.stopPropagation()}>
         <div className="reportModalHeader"><div><span>{text.reportTitle}</span><strong>{localized.title}</strong></div><button className="projectModalClose" type="button" onClick={() => setReportOpen(false)} aria-label={text.close}>×</button></div>
-        {hasReport ? <iframe className="projectReportFrame" src={`${report}#toolbar=0&navpanes=0&scrollbar=1&view=FitH`} title={`${text.reportTitle} ${localized.title}`} /> : <div className="projectReportUnavailable" aria-hidden="true" />}
+        {hasReport ? <PdfViewer src={report} title={`${text.reportTitle} ${localized.title}`} /> : <div className="projectReportUnavailable" aria-hidden="true" />}
       </div>
     </div>, document.body
   ) : null;
