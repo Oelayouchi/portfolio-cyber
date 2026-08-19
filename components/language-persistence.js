@@ -6,12 +6,23 @@ import { useLanguage } from './language-context';
 const STORAGE_KEY = 'portfolio-cyber-language';
 const SUPPORTED = new Set(['fr', 'en', 'ar', 'es', 'de']);
 
+function detectBrowserLanguage() {
+  if (typeof navigator === 'undefined') return 'en';
+  const candidates = [...(navigator.languages || []), navigator.language].filter(Boolean);
+  for (const locale of candidates) {
+    const code = String(locale).toLowerCase().split('-')[0];
+    if (SUPPORTED.has(code)) return code;
+  }
+  return 'en';
+}
+
 export default function LanguagePersistence() {
   const { language, setLanguage } = useLanguage();
 
   useEffect(() => {
-    const saved = window.localStorage.getItem(STORAGE_KEY);
-    if (saved && SUPPORTED.has(saved) && saved !== language) setLanguage(saved);
+    const detected = detectBrowserLanguage();
+    if (detected !== language) setLanguage(detected);
+    window.localStorage.setItem(STORAGE_KEY, detected);
   }, []);
 
   useEffect(() => {
