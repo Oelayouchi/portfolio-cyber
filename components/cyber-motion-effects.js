@@ -2,18 +2,17 @@
 
 import { useEffect } from 'react';
 
-const revealSelectors = [
+const windowSelectors = [
   '.experience',
   '.projectShowcaseCard',
   '.awardCard',
   '.cert',
   '.educationShowcaseCard',
   '.interestWrap',
-  '.homeTool',
-  '.dataFlowStep',
   '.availabilityV2Card',
-  '.cyberLabHeader',
-  '.cyberLabCard',
+  '.dataFlowStep',
+  '.contactFormPanel',
+  '#about > div',
 ];
 
 function animateCounter(node) {
@@ -39,15 +38,15 @@ function animateCounter(node) {
 export default function CyberMotionEffects() {
   useEffect(() => {
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const nodes = [...document.querySelectorAll(revealSelectors.join(','))];
+    const windows = [...document.querySelectorAll(windowSelectors.join(','))];
 
-    nodes.forEach((node, index) => {
-      node.classList.add('cyberReveal');
-      node.style.setProperty('--reveal-order', String(index % 3));
+    windows.forEach((node, index) => {
+      node.classList.add('cyberWindowReveal');
+      node.style.setProperty('--window-delay', `${Math.min(index % 3, 2) * 45}ms`);
     });
 
     if (reduced || !('IntersectionObserver' in window)) {
-      nodes.forEach((node) => node.classList.add('cyberVisible'));
+      windows.forEach((node) => node.classList.add('cyberWindowVisible'));
       document.querySelectorAll('.homeHighlightCard strong').forEach(animateCounter);
       return;
     }
@@ -55,22 +54,22 @@ export default function CyberMotionEffects() {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
-        entry.target.classList.add('cyberVisible');
+        entry.target.classList.add('cyberWindowVisible');
         observer.unobserve(entry.target);
       });
-    }, { threshold: 0.02, rootMargin: '120px 0px 80px 0px' });
+    }, { threshold: 0.07, rootMargin: '0px 0px -2% 0px' });
 
-    nodes.forEach((node) => observer.observe(node));
+    windows.forEach((node) => observer.observe(node));
 
-    const counters = document.querySelectorAll('.homeHighlightCard');
     const counterObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
         animateCounter(entry.target.querySelector('strong'));
         counterObserver.unobserve(entry.target);
       });
-    }, { threshold: 0.15, rootMargin: '80px 0px' });
-    counters.forEach((node) => counterObserver.observe(node));
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.homeHighlightCard').forEach((node) => counterObserver.observe(node));
 
     const timeline = document.querySelector('.timeline');
     let timelineObserver;
@@ -81,7 +80,7 @@ export default function CyberMotionEffects() {
           timeline.classList.add('cyberTimelineActive');
           timelineObserver.disconnect();
         }
-      }, { threshold: 0.01, rootMargin: '140px 0px' });
+      }, { threshold: 0.05 });
       timelineObserver.observe(timeline);
     }
 
@@ -92,37 +91,5 @@ export default function CyberMotionEffects() {
     };
   }, []);
 
-  return (
-    <section className="cyberLab shell" aria-label="Cyber Lab">
-      <div className="cyberLabHeader">
-        <span>CYBER LAB</span>
-        <h2>Interactive Security Lab</h2>
-      </div>
-      <div className="cyberLabGrid">
-        <article className="cyberLabCard">
-          <div className="cyberLabCardTop"><i></i><i></i><i></i><strong>network.scan</strong></div>
-          <div className="packetLane" aria-hidden="true"><b></b><b></b><b></b></div>
-          <h3>Network Analysis</h3>
-          <p>TCP/IP · DNS · HTTP · Wireshark</p>
-        </article>
-        <article className="cyberLabCard">
-          <div className="miniTerminal" aria-hidden="true">
-            <span>&gt; monitoring events...</span>
-            <span>[INFO] auth success</span>
-            <span>[WARN] failed logins</span>
-            <span className="terminalAlert">[ALERT] suspicious activity</span>
-            <span>[MITRE] T1059</span>
-          </div>
-          <h3>SOC &amp; SIEM</h3>
-          <p>Wazuh · Splunk · Logs · MITRE ATT&amp;CK</p>
-        </article>
-        <article className="cyberLabCard">
-          <div className="hardeningShield" aria-hidden="true">✓</div>
-          <div className="hardeningTags" aria-hidden="true"><span>Linux</span><span>AD</span><span>Windows</span></div>
-          <h3>System Hardening</h3>
-          <p>IAM · GPO · Linux · Windows Server</p>
-        </article>
-      </div>
-    </section>
-  );
+  return null;
 }
