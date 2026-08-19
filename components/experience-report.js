@@ -27,7 +27,7 @@ export default function ExperienceReport({ experienceId, title }) {
     {open&&<div className="projectModal" role="dialog" aria-modal="true" aria-label={`${text.report} ${title}`} onClick={()=>setOpen(false)}>
       <div className="projectModalContent reportModal" onClick={event=>event.stopPropagation()}>
         <div className="reportModalHeader"><div><span>{text.title}</span><strong>{title}</strong></div><button className="projectModalClose" type="button" onClick={()=>setOpen(false)} aria-label={text.close}>×</button></div>
-        <iframe className="projectReportFrame" src={`${report}#toolbar=0&navpanes=0&scrollbar=1&view=FitH`} title={`${text.report} ${title}`} />
+        <iframe className="projectReportFrame" src={`${report}#toolbar=1&navpanes=0&scrollbar=1&view=Fit`} title={`${text.report} ${title}`} />
       </div>
     </div>}
   </>;
