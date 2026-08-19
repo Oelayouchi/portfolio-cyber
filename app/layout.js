@@ -23,6 +23,7 @@ import './availability-v2.css';
 import './home-layout-fix.css';
 import './availability-v2-refine.css';
 import './ui-alignment-fixes.css';
+import './cyber-recent-fixes.css';
 
 export const metadata = {
   title: 'Oussama EL AYOUCHI — Portfolio Cybersécurité',
@@ -32,5 +33,5 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  return <html lang="fr"><head><meta name="format-detection" content="telephone=no,date=no,address=no,email=no,url=no" /></head><body>{children}</body></html>;
+  return <html lang="en"><head><meta name="format-detection" content="telephone=no,date=no,address=no,email=no,url=no" /></head><body>{children}</body></html>;
 }
