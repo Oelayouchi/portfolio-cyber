@@ -59,3 +59,58 @@ h4{font-size:18px}
   .reportModalHeader{min-height:62px!important;padding:10px 12px!important}
   .projectModalClose{width:40px!important;height:40px!important;flex-basis:40px!important}
 }
+
+/* === Stability/restore pass === */
+/* Restore original navbar logo visual size. */
+.brand{font-size:38px!important;line-height:1!important;min-width:max-content!important;transform:none!important}
+
+/* Restore original alternance floating window sizing and typography. */
+.alternanceBanner{right:28px!important;bottom:28px!important;gap:16px!important;width:min(560px,calc(100vw - 36px))!important;padding:16px 18px!important;border-radius:20px!important;grid-template-columns:auto minmax(0,1fr) auto!important}
+.alternanceMinimize{top:8px!important;right:11px!important;width:28px!important;height:28px!important;font-size:20px!important}
+.alternancePulse{width:42px!important;height:42px!important}
+.alternanceContent{padding-right:18px!important}
+.alternanceEyebrow{margin-bottom:4px!important;font-size:10px!important}
+.alternanceContent strong{font-size:18px!important;line-height:1.2!important}
+.alternanceContent p{margin:5px 0 0!important;font-size:12px!important;line-height:1.45!important}
+.alternanceCta{min-height:44px!important;padding:0 16px!important;font-size:13px!important;border-radius:13px!important}
+
+/* Cyber dashboard below green banner: eliminate overlap/clipping. */
+.availabilityV2Dashboard{height:215px!important;min-height:215px!important;overflow:visible!important;grid-template-columns:repeat(3,minmax(0,1fr))!important}
+.availabilityV2Card{position:relative!important;overflow:visible!important;padding:12px 10px!important;justify-content:flex-start!important;gap:8px!important}
+.cyberVisualCard{overflow:visible!important}
+.cyberVisualTitle{min-height:38px!important;display:flex!important;align-items:center!important;justify-content:center!important;font-size:12px!important;line-height:1.2!important}
+.networkMap{width:min(96%,250px)!important;height:132px!important;margin:0 auto!important;overflow:visible!important}
+.networkNode{width:50px!important;height:42px!important;font-size:11px!important;line-height:1!important}
+.nodeInternet,.nodeFirewall,.nodeSoc{top:37px!important}
+.nodePc,.nodeServer{bottom:0!important;width:44px!important;height:30px!important;font-size:10px!important}
+.lineOne{top:58px!important;left:48px!important;width:calc(50% - 70px)!important}
+.lineTwo{top:58px!important;width:calc(50% - 48px)!important}
+.branchOne,.branchTwo{top:64px!important;width:62px!important}
+.socConsole{width:min(96%,250px)!important;min-height:124px!important;padding:10px 11px!important;overflow:hidden!important}
+.socConsoleTop span{font-size:10px!important}
+.socConsole p{font-size:10px!important;line-height:1.35!important;overflow:hidden!important;text-overflow:ellipsis!important}
+.shieldScene{width:min(96%,230px)!important;height:132px!important;overflow:visible!important}
+.shieldIcon{width:72px!important;height:82px!important}
+.shieldTag{font-size:10px!important;white-space:nowrap!important}
+.cyberVisualFooter{margin-top:auto!important;gap:5px!important}
+.cyberVisualFooter span{font-size:10px!important;padding:3px 6px!important}
+
+/* Internship list: no overlap, ParcelHome year sits in its own column. */
+.homeStageList a{grid-template-columns:38px minmax(0,1fr) auto!important;gap:8px!important;overflow:hidden!important}
+.homeStageList a>span{display:contents!important}
+.homeStageList b{font-size:12px!important;overflow:hidden!important;text-overflow:ellipsis!important;white-space:nowrap!important}
+.homeStageList small{font-size:12px!important;white-space:nowrap!important;justify-self:end!important}
+
+/* No horizontal page drift on touchpad; preserve vertical scroll / native refresh gesture. */
+html,body{width:100%!important;max-width:100%!important;overflow-x:clip!important;overscroll-behavior-x:none!important;overscroll-behavior-y:auto!important}
+body{position:relative!important}
+main,.shell,.section,.homeHero,.homeHeroShell,.homeHeroMain{max-width:100%!important}
+img,svg,canvas,video,iframe{max-width:100%}
+
+@media(max-width:760px){
+  .brand{font-size:34px!important}
+  .alternanceBanner{right:14px!important;bottom:14px!important;left:14px!important;width:auto!important;padding:14px!important;grid-template-columns:auto 1fr!important}
+  .alternanceCta{grid-column:1/-1!important;width:100%!important}
+  .availabilityV2Dashboard{height:auto!important;min-height:0!important;overflow:hidden!important}
+  .availabilityV2Card{overflow:hidden!important}
+}
