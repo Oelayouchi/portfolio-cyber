@@ -20,9 +20,10 @@ export default function LanguagePersistence() {
   const { language, setLanguage } = useLanguage();
 
   useEffect(() => {
-    const detected = detectBrowserLanguage();
-    if (detected !== language) setLanguage(detected);
-    window.localStorage.setItem(STORAGE_KEY, detected);
+    const saved = window.localStorage.getItem(STORAGE_KEY);
+    const initial = saved && SUPPORTED.has(saved) ? saved : detectBrowserLanguage();
+    if (initial !== language) setLanguage(initial);
+    if (!saved) window.localStorage.setItem(STORAGE_KEY, initial);
   }, []);
 
   useEffect(() => {
