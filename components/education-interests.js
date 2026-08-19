@@ -6,13 +6,41 @@ import { useLanguage } from './language-context';
 export default function EducationInterestsSection() {
   const { t, language } = useLanguage();
 
+  const nexaBullets = {
+    fr: [
+      'Administration et sécurisation des réseaux : Cisco, fondamentaux TCP/IP, routage, commutation, Windows Server, Linux et virtualisation VMware.',
+      'Cybersécurité et cloud : identification des menaces, cryptographie, hacking éthique, audits de vulnérabilités et sécurisation des environnements AWS, Azure et Google Cloud.',
+      'Administration avancée et exploitation IT : DevOps, ITIL v4, supervision des infrastructures, automatisation des processus et sécurisation des systèmes de gestion de bases de données.'
+    ],
+    en: [
+      'Network administration and security: Cisco, TCP/IP fundamentals, routing, switching, Windows Server, Linux and VMware virtualization.',
+      'Cybersecurity and cloud: threat identification, cryptography, ethical hacking, vulnerability audits and securing AWS, Azure and Google Cloud environments.',
+      'Advanced IT operations: DevOps, ITIL v4, infrastructure monitoring, process automation and database management system security.'
+    ],
+    ar: [
+      'إدارة وتأمين الشبكات: Cisco وأساسيات TCP/IP والتوجيه والتحويل وWindows Server وLinux وافتراضية VMware.',
+      'الأمن السيبراني والسحابة: تحديد التهديدات والتشفير والاختبار الأخلاقي للأنظمة وتدقيق الثغرات وتأمين بيئات AWS وAzure وGoogle Cloud.',
+      'إدارة وتشغيل البنية التحتية: DevOps وITIL v4 والمراقبة والأتمتة وتأمين أنظمة إدارة قواعد البيانات.'
+    ],
+    es: [
+      'Administración y seguridad de redes: Cisco, fundamentos TCP/IP, routing, switching, Windows Server, Linux y virtualización VMware.',
+      'Ciberseguridad y cloud: identificación de amenazas, criptografía, hacking ético, auditorías de vulnerabilidades y seguridad en AWS, Azure y Google Cloud.',
+      'Operación IT avanzada: DevOps, ITIL v4, supervisión de infraestructuras, automatización y seguridad de sistemas de gestión de bases de datos.'
+    ],
+    de: [
+      'Netzwerkadministration und -sicherheit: Cisco, TCP/IP-Grundlagen, Routing, Switching, Windows Server, Linux und VMware-Virtualisierung.',
+      'Cybersecurity und Cloud: Bedrohungserkennung, Kryptografie, Ethical Hacking, Schwachstellenanalysen sowie Absicherung von AWS, Azure und Google Cloud.',
+      'Erweiterter IT-Betrieb: DevOps, ITIL v4, Infrastrukturüberwachung, Prozessautomatisierung und Absicherung von Datenbanksystemen.'
+    ]
+  };
+
   const education = [
     {
       year: '2026',
       degree: language === 'fr' ? 'Bachelor Cybersécurité' : language === 'ar' ? 'بكالوريوس الأمن السيبراني' : language === 'es' ? 'Bachelor en Ciberseguridad' : language === 'de' ? 'Bachelor Cybersecurity' : 'Bachelor Cybersecurity',
       institution: 'NEXA DIGITAL SCHOOL — LYON',
       logo: '/schools/nexa.svg',
-      bullets: [t('nexaBul1'), t('nexaBul2'), t('nexaBul3')],
+      bullets: nexaBullets[language] || nexaBullets.en,
     },
     {
       year: '2022',
