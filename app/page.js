@@ -10,6 +10,7 @@ import ContactSection from '../components/contact-section';
 import HomeHero from '../components/home-hero';
 import DataSection from '../components/data-section';
 import AboutCyberSection from '../components/about-cyber-section';
+import CyberMotionEffects from '../components/cyber-motion-effects';
 import { Footer } from '../components/portfolio-sections';
 import { LanguageProvider } from '../components/language-context';
 import LanguagePersistence from '../components/language-persistence';
@@ -27,6 +28,7 @@ export default function Page() {
         <ProjectsSection />
         <AwardsSection />
         <DataSection />
+        <CyberMotionEffects />
         <CertificationsSection />
         <EducationInterestsSection />
         <ContactSection />
