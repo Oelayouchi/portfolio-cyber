@@ -3,7 +3,6 @@
 import { useEffect } from 'react';
 
 const revealSelectors = [
-  '.section',
   '.experience',
   '.projectShowcaseCard',
   '.awardCard',
@@ -13,6 +12,8 @@ const revealSelectors = [
   '.homeTool',
   '.dataFlowStep',
   '.availabilityV2Card',
+  '.cyberLabHeader',
+  '.cyberLabCard',
 ];
 
 function animateCounter(node) {
@@ -22,7 +23,7 @@ function animateCounter(node) {
   if (!match) return;
   const target = Number(match[1]);
   const suffix = match[2] || '';
-  const duration = 850;
+  const duration = 650;
   const start = performance.now();
   node.dataset.counted = '1';
 
@@ -42,7 +43,7 @@ export default function CyberMotionEffects() {
 
     nodes.forEach((node, index) => {
       node.classList.add('cyberReveal');
-      node.style.setProperty('--reveal-order', String(index % 6));
+      node.style.setProperty('--reveal-order', String(index % 3));
     });
 
     if (reduced || !('IntersectionObserver' in window)) {
@@ -55,15 +56,21 @@ export default function CyberMotionEffects() {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
         entry.target.classList.add('cyberVisible');
-        if (entry.target.classList.contains('homeHighlightCard')) {
-          animateCounter(entry.target.querySelector('strong'));
-        }
         observer.unobserve(entry.target);
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -7% 0px' });
+    }, { threshold: 0.02, rootMargin: '120px 0px 80px 0px' });
 
     nodes.forEach((node) => observer.observe(node));
-    document.querySelectorAll('.homeHighlightCard').forEach((node) => observer.observe(node));
+
+    const counters = document.querySelectorAll('.homeHighlightCard');
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        animateCounter(entry.target.querySelector('strong'));
+        counterObserver.unobserve(entry.target);
+      });
+    }, { threshold: 0.15, rootMargin: '80px 0px' });
+    counters.forEach((node) => counterObserver.observe(node));
 
     const timeline = document.querySelector('.timeline');
     let timelineObserver;
@@ -74,30 +81,31 @@ export default function CyberMotionEffects() {
           timeline.classList.add('cyberTimelineActive');
           timelineObserver.disconnect();
         }
-      }, { threshold: 0.08 });
+      }, { threshold: 0.01, rootMargin: '140px 0px' });
       timelineObserver.observe(timeline);
     }
 
     return () => {
       observer.disconnect();
+      counterObserver.disconnect();
       timelineObserver?.disconnect();
     };
   }, []);
 
   return (
     <section className="cyberLab shell" aria-label="Cyber Lab">
-      <div className="cyberLabHeader cyberReveal">
+      <div className="cyberLabHeader">
         <span>CYBER LAB</span>
         <h2>Interactive Security Lab</h2>
       </div>
       <div className="cyberLabGrid">
-        <article className="cyberLabCard cyberReveal">
+        <article className="cyberLabCard">
           <div className="cyberLabCardTop"><i></i><i></i><i></i><strong>network.scan</strong></div>
           <div className="packetLane" aria-hidden="true"><b></b><b></b><b></b></div>
           <h3>Network Analysis</h3>
           <p>TCP/IP · DNS · HTTP · Wireshark</p>
         </article>
-        <article className="cyberLabCard cyberReveal">
+        <article className="cyberLabCard">
           <div className="miniTerminal" aria-hidden="true">
             <span>&gt; monitoring events...</span>
             <span>[INFO] auth success</span>
@@ -108,7 +116,7 @@ export default function CyberMotionEffects() {
           <h3>SOC &amp; SIEM</h3>
           <p>Wazuh · Splunk · Logs · MITRE ATT&amp;CK</p>
         </article>
-        <article className="cyberLabCard cyberReveal">
+        <article className="cyberLabCard">
           <div className="hardeningShield" aria-hidden="true">✓</div>
           <div className="hardeningTags" aria-hidden="true"><span>Linux</span><span>AD</span><span>Windows</span></div>
           <h3>System Hardening</h3>
