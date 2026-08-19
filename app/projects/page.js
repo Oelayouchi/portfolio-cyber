@@ -33,7 +33,7 @@ function ProjectsContent(){
       <header className="navBar">
         <nav className="nav shell" aria-label="Portfolio navigation">
           <Link className="brand" href="/" aria-label="Portfolio home">OE<span>.</span></Link>
-          <div className="navRight">
+          <div className="navRight allProjectsNavRight">
             <label className="languageSelector" aria-label={text.language}>
               <span className="languageGlobe" aria-hidden="true">🌐</span>
               <select value={language} onChange={(event)=>setLanguage(event.target.value)}>
@@ -44,7 +44,10 @@ function ProjectsContent(){
               <span><ThemeIcon type="moon"/></span>
               <span><ThemeIcon type="sun"/></span>
             </div>
-            <Link className="allProjectsBack" href="/#projects"><span aria-hidden="true">←</span>{text.back}</Link>
+            <Link className="allProjectsBack" href="/#projects" aria-label={text.back}>
+              <span className="allProjectsBackArrow" aria-hidden="true">←</span>
+              <span className="allProjectsBackText">{text.back}</span>
+            </Link>
           </div>
         </nav>
       </header>
