@@ -11,5 +11,5 @@ export function Footer() {
     es:'Portfolio de Ciberseguridad',
     de:'Cybersecurity-Portfolio'
   }[language];
-  return <footer className="footer shell"><span>© 2026 Oussama EL AYOUCHI</span><span>{label}</span></footer>;
+  return <footer className="footer shell"><span>© 2026 Oussama EL AYOUCHI - {label}</span></footer>;
 }
