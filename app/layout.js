@@ -26,6 +26,7 @@ import './ui-alignment-fixes.css';
 import './cyber-recent-fixes.css';
 import './cyber-motion.css';
 import './final-three-sections.css';
+import './final-alignment-round2.css';
 
 export const metadata = {
   title: 'Oussama EL AYOUCHI — Portfolio Cybersécurité',
