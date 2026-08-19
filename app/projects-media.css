@@ -7,8 +7,8 @@
 .reportModalHeader span { color:#56a4ff;font-size:10px;font-weight:900;letter-spacing:.15em; }
 .reportModalHeader strong { color:#fff;font-size:18px; }
 .reportModalHeader .projectModalClose { flex:0 0 38px;position:relative;z-index:6; }
-.projectReportFrame { display:block;width:100%;height:100%;min-height:0;border:0;background:#fff; }
+.projectReportFrame { display:block;width:100%;height:100%;min-height:0;border:0;background:#fff;overflow:auto;-webkit-overflow-scrolling:touch; }
 html[data-theme='light'] .projectModalContent { background:#f7fbff; }
 html[data-theme='light'] .reportModalHeader { background:#f7fbff; }
 html[data-theme='light'] .reportModalHeader strong { color:#0a1830; }
-@media(max-width:720px){.projectModal{padding:10px}.reportModal{grid-template-rows:auto minmax(0,1fr);width:min(100%,96vw);height:92vh}.reportModalHeader{min-height:64px;padding:12px 14px}.projectReportFrame{min-height:0}}
+@media(max-width:720px){.projectModal{padding:8px}.projectModalContent{width:calc(100vw - 16px);max-height:88vh;border-radius:16px}.reportModal{grid-template-rows:60px minmax(0,1fr);width:calc(100vw - 16px);height:82vh;max-height:82vh}.reportModalHeader{min-height:60px;padding:10px 12px}.reportModalHeader strong{font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.reportModalHeader .projectModalClose{width:36px;height:36px;flex-basis:36px}.projectReportFrame{width:100%;height:100%;min-height:0;touch-action:pan-x pan-y}}
