@@ -1,0 +1,53 @@
+/* Final targeted fixes: projects, cyber conversion title, education alignment. */
+
+/* PROJECTS — restore compact stylish tool/button type while keeping body copy readable. */
+.projectShowcaseGrid{align-items:stretch!important}
+.projectShowcaseCard{height:100%!important}
+.projectShowcaseContent{display:grid!important;grid-template-rows:76px 76px 82px minmax(190px,1fr) 66px!important;align-content:stretch!important;padding:24px 22px 24px!important}
+.projectShowcaseTags{display:flex!important;align-content:flex-start!important;align-items:flex-start!important;min-height:76px!important;margin:0!important;padding:0 0 18px!important;border-bottom:1px solid rgba(64,101,148,.26)!important;gap:8px!important}
+.projectShowcaseTags span{padding:6px 9px!important;font-size:10px!important;line-height:1.2!important;letter-spacing:.07em!important}
+.projectShowcaseTitleRow{display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;align-items:start!important;gap:12px!important;height:76px!important;min-height:76px!important;margin:0!important;padding:16px 0 12px!important;border-bottom:1px solid rgba(64,101,148,.26)!important}
+.projectShowcaseContent h3{display:flex!important;align-items:flex-start!important;min-height:48px!important;margin:0!important;font-size:20px!important;line-height:1.16!important}
+.projectShowcaseButton{align-self:start!important;min-height:36px!important;padding:0 13px!important;border-radius:10px!important;font-size:10.5px!important;line-height:1!important;letter-spacing:.07em!important}
+.projectReportPulse{width:7px!important;height:7px!important}
+.projectShowcaseObjective{display:flex!important;align-items:flex-start!important;min-height:82px!important;height:auto!important;margin:0!important;padding:16px 0 12px!important;overflow:visible!important;white-space:normal!important;text-overflow:clip!important;font-size:14px!important;line-height:1.55!important}
+.projectShowcaseContent ul{align-self:start!important;min-height:190px!important;margin:0!important;padding:10px 0 18px 20px!important;font-size:14px!important;line-height:1.58!important}
+.projectShowcaseContent li+li{margin-top:10px!important}
+.projectShowcaseMeta{display:grid!important;align-self:end!important;min-height:66px!important;margin:0!important;padding-top:16px!important;border-top:1px solid rgba(64,101,148,.26)!important;font-size:12px!important;line-height:1.45!important}
+.projectShowcaseAllButton{min-height:42px!important;padding:0 17px!important;border-radius:10px!important;font-size:11px!important;letter-spacing:.07em!important}
+.projectShowcaseAllWrap{margin-top:24px!important}
+
+/* CYBER CONVERSION — one-line heading on desktop, safely inside the panel. */
+.dataPanelHeader h2{width:100%!important;max-width:none!important;margin:10px 0 0!important;font-size:clamp(24px,2.15vw,32px)!important;line-height:1.12!important;letter-spacing:-.025em!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:clip!important;text-wrap:nowrap!important}
+
+/* EDUCATION — exact shared horizontal levels for title, institution separators and body. */
+.educationCardsGrid{align-items:stretch!important}
+.educationShowcaseCard{height:100%!important}
+.educationShowcaseContent{display:grid!important;grid-template-rows:36px 108px 78px minmax(0,1fr)!important;align-content:start!important;padding:24px 26px 28px!important}
+.educationYearBadge{align-self:start!important}
+.educationShowcaseContent h3{display:flex!important;align-items:flex-start!important;min-height:108px!important;height:108px!important;margin:0!important;padding:16px 0 16px!important;border-bottom:1px solid rgba(64,101,148,.26)!important;font-size:21px!important;line-height:1.22!important;overflow:hidden!important}
+.educationInstitution{display:flex!important;align-items:center!important;min-height:78px!important;height:78px!important;margin:0!important;padding:14px 0!important;border-bottom:1px solid rgba(64,101,148,.26)!important;font-size:14px!important;line-height:1.4!important}
+.educationBullets{display:grid!important;align-content:start!important;gap:11px!important;min-width:0!important;padding-top:18px!important}
+.educationBullets p{margin:0!important;font-size:14px!important;line-height:1.52!important}
+
+@media(max-width:1180px){
+  .dataPanelHeader h2{font-size:clamp(23px,2.2vw,29px)!important}
+  .projectShowcaseContent{grid-template-rows:auto auto auto auto auto!important}
+  .projectShowcaseTags,.projectShowcaseTitleRow,.projectShowcaseObjective,.projectShowcaseContent ul,.projectShowcaseMeta{height:auto!important;min-height:0!important}
+  .projectShowcaseTitleRow{padding:14px 0 12px!important}
+  .projectShowcaseObjective{padding:14px 0 10px!important}
+  .educationShowcaseContent{grid-template-rows:36px auto auto auto!important}
+  .educationShowcaseContent h3,.educationInstitution{height:auto!important;min-height:0!important}
+}
+@media(max-width:1050px){
+  .dataPanelHeader h2{font-size:clamp(27px,4vw,38px)!important;white-space:normal!important;text-wrap:balance!important;overflow:visible!important}
+}
+@media(max-width:760px){
+  .projectShowcaseTitleRow{grid-template-columns:1fr!important;gap:10px!important}
+  .projectShowcaseButton{width:fit-content!important}
+  .projectShowcaseTags span,.projectShowcaseButton,.projectShowcaseAllButton{font-size:10.5px!important}
+  .educationShowcaseContent{padding:22px 20px 24px!important}
+  .educationShowcaseContent h3{padding:14px 0 13px!important}
+  .educationInstitution{padding:12px 0!important}
+  .educationBullets{padding-top:15px!important;gap:10px!important}
+}
