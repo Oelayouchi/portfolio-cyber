@@ -1,0 +1,61 @@
+/* Global readability + hero identity/stats + report modal fixes */
+
+/* GLOBAL MINIMUM READABLE TEXT SIZE: 14px for normal UI text. Headings get larger explicit tiers below. */
+body{font-size:14px}
+p,li,small,label,input,textarea,button,select,option,
+.nav a,.languageSelector,.themeToggle,
+.homeIdentityCopy span,.homeIdentityCopy p,
+.homeHighlightCard span,.homeHighlightCard small,
+.homeTool strong,.homeCareerItem small,.homeCareerItem p,.homeCareerItem em,
+.homeStageList b,.homeStageList small,
+.projectShowcaseTags span,.projectShowcaseObjective,.projectShowcaseContent ul,.projectShowcaseMeta,
+.projectShowcaseButton,.projectShowcaseAllButton,
+.educationInstitution,.educationBullets p,
+#certifications .cert .meta,#certifications .cert>div>p:last-child,
+.dataPanelCopy p,.dataFlowStep p,.dataFlowNumber,.dataFlowCaption,
+.experienceDepartment,.experienceBlock h5,.experienceBody li,.experienceMetaTop span,
+.contactForm label,.contactForm input,.contactForm textarea,.contactFormStatus,
+.awardContent p,.awardContent>span{font-size:14px!important}
+
+/* Heading scale — preserve clear hierarchy after enforcing 14px minimum body text. */
+h1,.homeHeroIntro h1{font-size:clamp(48px,5.2vw,78px)!important}
+h2{font-size:clamp(30px,3.2vw,48px)}
+h3{font-size:clamp(20px,1.7vw,26px)}
+h4{font-size:18px}
+
+/* HERO IDENTITY CARD: larger title/text under photo and blue title. */
+.homeIdentityCopy{gap:8px!important;padding:20px 20px 22px!important}
+.homeIdentityCopy strong{color:#2f9cff!important;font-size:20px!important;line-height:1.2!important}
+.homeIdentityCopy span{color:#b7c9dd!important;font-size:14px!important;line-height:1.45!important;font-weight:700!important}
+.homeIdentityCopy p{margin-top:8px!important;color:#d2dbe7!important;font-size:14px!important;line-height:1.55!important}
+
+/* HERO STATS / text around portrait: larger and easier to read. */
+.homeHighlightCard strong{font-size:clamp(36px,3vw,46px)!important}
+.homeHighlightCard span{font-size:14px!important;line-height:1.35!important}
+.homeHighlightCard small{font-size:14px!important;line-height:1.45!important}
+.homeHeroIntro>p{font-size:16px!important;line-height:1.55!important}
+.homeHeroActions .button{font-size:14px!important}
+.availabilityV2Banner strong{font-size:14px!important}
+.cyberVisualTitle,.cyberVisualFooter span,.networkNode,.socConsoleTop span,.socConsole p,.shieldTag{font-size:14px!important}
+
+/* REPORT / PDF MODAL: always above fixed navbar, with visible sticky header and close button. */
+.projectModal{z-index:100000!important;align-items:center!important;padding:86px 20px 20px!important;overflow:auto!important}
+.projectModalContent.reportModal{position:relative!important;width:min(1100px,96vw)!important;height:min(760px,calc(100vh - 110px))!important;max-height:calc(100vh - 110px)!important;overflow:hidden!important;border-radius:18px!important}
+.reportModalHeader{position:sticky!important;top:0!important;z-index:100002!important;min-height:68px!important;padding:14px 18px!important;background:#081526!important;box-shadow:0 8px 22px rgba(0,0,0,.28)!important}
+.reportModalHeader span{font-size:14px!important}
+.reportModalHeader strong{font-size:20px!important}
+.projectModalClose{position:relative!important;z-index:100003!important;display:grid!important;width:42px!important;height:42px!important;place-items:center!important;flex:0 0 42px!important;color:#fff!important;font-size:28px!important;line-height:1!important;cursor:pointer!important}
+.reportModal .projectReportFrame,.reportModal .pdfViewer,.reportModal iframe{height:calc(100% - 68px)!important;max-height:calc(100% - 68px)!important}
+.projectReportUnavailable{display:grid!important;height:calc(100% - 68px)!important;place-items:center!important;padding:24px!important;color:#aebdd0!important;font-size:16px!important;text-align:center!important}
+
+@media(max-width:760px){
+  p,li,small,label,input,textarea,button,select,option{font-size:14px!important}
+  .homeIdentityCopy strong{font-size:18px!important}
+  .homeIdentityCopy span,.homeIdentityCopy p{font-size:14px!important}
+  .homeIdentityCopy p{display:block!important}
+  .homeHighlightCard span,.homeHighlightCard small{font-size:14px!important}
+  .projectModal{padding:72px 10px 10px!important}
+  .projectModalContent.reportModal{width:100%!important;height:calc(100vh - 82px)!important;max-height:calc(100vh - 82px)!important;border-radius:14px!important}
+  .reportModalHeader{min-height:62px!important;padding:10px 12px!important}
+  .projectModalClose{width:40px!important;height:40px!important;flex-basis:40px!important}
+}
