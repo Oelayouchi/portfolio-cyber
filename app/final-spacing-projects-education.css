@@ -1,0 +1,52 @@
+/* Global spacing + projects + diplomas final polish */
+
+/* 1) Global section rhythm: remove the large empty gaps between consecutive sections. */
+.section{padding-top:68px!important;padding-bottom:68px!important}
+.section + .section{margin-top:0!important}
+#about.section{margin-top:14px!important;margin-bottom:14px!important}
+.projectShowcaseSection{padding-top:58px!important}
+#education.section{padding-top:62px!important}
+#certifications.section{padding-top:62px!important}
+#contact.section{padding-top:62px!important}
+
+/* 2) Projects: subtle matching separators + breathing room. No clipped/condensed text. */
+.projectShowcaseContent{display:grid!important;grid-template-rows:auto auto auto minmax(0,1fr) auto!important;align-content:start!important;padding:24px 22px 24px!important}
+.projectShowcaseTags{min-height:62px!important;margin:0 0 18px!important;padding:0 0 16px!important;border-bottom:1px solid rgba(64,101,148,.26)!important;align-content:flex-start!important}
+.projectShowcaseTitleRow{height:auto!important;min-height:66px!important;margin:0 0 14px!important;align-items:flex-start!important;border:0!important}
+.projectShowcaseContent h3{min-height:0!important;margin:0!important;font-size:20px!important;line-height:1.2!important}
+.projectShowcaseButton{margin-top:0!important;min-height:38px!important}
+.projectShowcaseObjective{height:auto!important;min-height:54px!important;margin:0 0 16px!important;overflow:visible!important;text-overflow:clip!important;white-space:normal!important;font-size:14px!important;line-height:1.55!important}
+.projectShowcaseContent ul{min-height:170px!important;margin:0 0 20px!important;padding-top:2px!important;padding-left:20px!important;line-height:1.62!important}
+.projectShowcaseContent li+li{margin-top:9px!important}
+.projectShowcaseMeta{min-height:58px!important;margin-top:auto!important;padding-top:16px!important;border-top:1px solid rgba(64,101,148,.26)!important;align-self:end!important}
+
+/* 3) Diplomas: same internal levels, but preserve complete text and add line-break breathing. */
+.educationCardsGrid{align-items:stretch!important}
+.educationShowcaseCard{height:100%!important}
+.educationShowcaseContent{display:grid!important;grid-template-rows:34px minmax(92px,auto) minmax(58px,auto) minmax(0,1fr)!important;align-content:start!important;padding:24px 26px 28px!important}
+.educationShowcaseContent h3{display:flex!important;align-items:flex-start!important;min-height:92px!important;margin:14px 0 0!important;padding-bottom:14px!important;border-bottom:1px solid rgba(64,101,148,.26)!important;font-size:21px!important;line-height:1.22!important}
+.educationInstitution{display:flex!important;align-items:flex-start!important;min-height:58px!important;margin:0!important;padding:14px 0!important;border-bottom:1px solid rgba(64,101,148,.26)!important;font-size:14px!important;line-height:1.45!important}
+.educationBullets{display:grid!important;align-content:start!important;gap:11px!important;padding-top:16px!important}
+.educationBullets p{font-size:14px!important;line-height:1.52!important}
+
+@media(max-width:1050px){
+  .section{padding-top:58px!important;padding-bottom:58px!important}
+  .projectShowcaseContent{grid-template-rows:auto auto auto auto auto!important}
+  .projectShowcaseTitleRow,.projectShowcaseObjective,.projectShowcaseContent ul{min-height:0!important}
+  .educationShowcaseContent{grid-template-rows:34px auto auto auto!important}
+  .educationShowcaseContent h3,.educationInstitution{min-height:0!important}
+}
+
+@media(max-width:760px){
+  .section{padding-top:46px!important;padding-bottom:46px!important}
+  .projectShowcaseSection,#education.section,#certifications.section,#contact.section{padding-top:46px!important}
+  .projectShowcaseContent{padding:21px 18px 22px!important}
+  .projectShowcaseTags{min-height:0!important;margin-bottom:15px!important;padding-bottom:14px!important}
+  .projectShowcaseTitleRow{min-height:0!important;margin-bottom:12px!important}
+  .projectShowcaseObjective{min-height:0!important;margin-bottom:14px!important}
+  .projectShowcaseContent ul{min-height:0!important;margin-bottom:18px!important}
+  .educationShowcaseContent{padding:22px 20px 24px!important}
+  .educationShowcaseContent h3{min-height:0!important;padding-bottom:12px!important}
+  .educationInstitution{min-height:0!important;padding:12px 0!important}
+  .educationBullets{padding-top:14px!important;gap:10px!important}
+}
