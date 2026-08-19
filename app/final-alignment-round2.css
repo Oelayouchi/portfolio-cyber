@@ -1,0 +1,80 @@
+/* Final alignment pass: diplomas, certifications, cyber conversion, projects, experience report CTA, about. */
+
+/* 1) DIPLOMAS — fixed internal rows so white title / blue institution / body align across cards. */
+.educationCardsGrid{align-items:stretch!important}
+.educationShowcaseCard{height:100%!important}
+.educationShowcaseContent{display:grid!important;grid-template-rows:34px 82px 54px minmax(0,1fr)!important;align-content:start!important}
+.educationYearBadge{align-self:start!important}
+.educationShowcaseContent h3{display:flex!important;align-items:flex-start!important;min-height:82px!important;margin:12px 0 0!important}
+.educationInstitution{display:flex!important;align-items:flex-start!important;min-height:54px!important;margin:0!important}
+.educationBullets{align-self:start!important;padding-top:4px!important}
+
+/* 2) CERTIFICATIONS — strict same baselines for title, meta and description. */
+#certifications .certs{align-items:stretch!important;grid-auto-rows:1fr!important}
+#certifications .cert{display:grid!important;height:100%!important;grid-template-rows:252px minmax(230px,1fr)!important;overflow:hidden!important}
+#certifications .cert>img{display:block!important;width:100%!important;height:252px!important;object-fit:cover!important;object-position:center top!important;background:#fff!important}
+#certifications .cert>div{display:grid!important;grid-template-rows:66px 32px minmax(70px,1fr)!important;align-content:start!important;gap:10px!important;padding:26px 20px 22px!important}
+#certifications .cert h3{display:flex!important;align-items:flex-start!important;min-height:66px!important;margin:0!important;font-size:19px!important;line-height:1.24!important}
+#certifications .cert .meta{display:flex!important;align-items:center!important;min-height:32px!important;margin:0!important}
+#certifications .cert>div>p:last-child{display:flex!important;align-items:flex-start!important;min-height:70px!important;margin:0!important}
+
+/* 3) CYBER CONVERSION — smaller heading/details, icons never clipped while moving. */
+.dataPanel{overflow:visible!important;padding-top:34px!important;padding-bottom:34px!important}
+.dataPanelHeader{margin-bottom:24px!important}
+.dataPanelHeader h2{max-width:1120px!important;font-size:clamp(30px,3vw,44px)!important;line-height:1.06!important;white-space:normal!important}
+.dataPanelBody{gap:34px!important}
+.dataPanelCopy p{font-size:14px!important;line-height:1.58!important}
+.dataFlow,.dataFlowSteps,.dataFlowStep{overflow:visible!important}
+.dataFlowSteps{gap:10px!important;padding-top:10px!important}
+.dataFlowStep{padding-top:8px!important}
+.dataFlowIcon{width:76px!important;height:76px!important;margin-bottom:10px!important;animation:dataFlowIconSafe 2.6s ease-in-out infinite!important}
+.dataFlowIcon svg{width:36px!important;height:36px!important;animation:dataFlowSvgSafe 2.2s ease-in-out infinite!important}
+.dataFlowStep h3{font-size:16px!important;margin-bottom:6px!important}
+.dataFlowStep p{font-size:11.5px!important;line-height:1.45!important}
+.dataFlowNumber{height:24px!important;min-width:34px!important;font-size:11px!important}
+.dataFlowArrow{font-size:23px!important;margin-top:34px!important}
+.dataFlowCaption{max-width:760px!important;margin-top:18px!important;padding:8px 14px!important;font-size:12px!important}
+@keyframes dataFlowIconSafe{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-3px) scale(1.025)}}
+@keyframes dataFlowSvgSafe{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-1px) rotate(2deg)}}
+
+/* 4) PROJECTS — same rows for tags/title/objective/list/meta; objective stays one line on desktop. */
+.projectShowcaseGrid{align-items:stretch!important}
+.projectShowcaseCard{height:100%!important}
+.projectShowcaseContent{display:grid!important;grid-template-rows:66px 58px 30px minmax(155px,1fr) 58px!important;align-content:stretch!important}
+.projectShowcaseTags{min-height:66px!important;align-content:flex-start!important;margin:0!important;padding:0 0 14px!important}
+.projectShowcaseTitleRow{height:58px!important;min-height:58px!important;margin:0!important;align-items:flex-start!important}
+.projectShowcaseContent h3{display:flex!important;align-items:flex-start!important;min-height:52px!important;font-size:19px!important;line-height:1.15!important}
+.projectShowcaseButton{margin-top:0!important;min-height:36px!important}
+.projectShowcaseObjective{height:30px!important;min-height:30px!important;margin:0!important;overflow:hidden!important;text-overflow:ellipsis!important;white-space:nowrap!important;font-size:12.5px!important;line-height:1.5!important}
+.projectShowcaseContent ul{align-self:start!important;min-height:155px!important;margin:0!important;padding-top:10px!important}
+.projectShowcaseMeta{min-height:58px!important;margin:0!important;padding-top:14px!important;align-self:end!important}
+
+/* 6) ABOUT — make it a real card/window, smaller heading, centered copy aligned to heading block. */
+#about.section{position:relative!important;margin-top:24px!important;margin-bottom:24px!important;padding:42px 44px!important;border:1px solid rgba(48,118,205,.38)!important;border-radius:22px!important;background:linear-gradient(145deg,rgba(9,27,51,.94),rgba(7,18,35,.94))!important;box-shadow:inset 0 0 36px rgba(31,112,255,.05),0 20px 55px rgba(0,0,0,.12)!important}
+#about.split{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)!important;gap:56px!important;align-items:center!important}
+#about h2{max-width:520px!important;font-size:clamp(36px,3.8vw,54px)!important;line-height:1.02!important}
+#about .copy{display:flex!important;flex-direction:column!important;justify-content:center!important;align-self:stretch!important;max-width:620px!important;margin:0!important}
+#about .copy p{font-size:14px!important;line-height:1.6!important}
+
+@media(max-width:1050px){
+  .educationShowcaseContent{grid-template-rows:34px auto auto 1fr!important}
+  #certifications .cert{grid-template-rows:230px minmax(220px,1fr)!important}
+  #certifications .cert>img{height:230px!important}
+  .projectShowcaseContent{grid-template-rows:auto auto auto auto auto!important}
+  .projectShowcaseObjective{height:auto!important;min-height:0!important;white-space:normal!important}
+  .projectShowcaseContent ul{min-height:0!important}
+}
+@media(max-width:760px){
+  .educationShowcaseContent{grid-template-rows:auto auto auto auto!important}
+  .educationShowcaseContent h3,.educationInstitution{min-height:0!important}
+  #certifications .cert{grid-template-rows:auto auto!important}
+  #certifications .cert>img{height:auto!important;aspect-ratio:16/10!important}
+  #certifications .cert>div{grid-template-rows:auto auto auto!important}
+  #certifications .cert h3,#certifications .cert .meta,#certifications .cert>div>p:last-child{min-height:0!important}
+  .dataPanel{overflow:hidden!important;padding:28px 20px!important}
+  .dataFlowSteps{padding-top:4px!important}
+  .dataFlowIcon{width:70px!important;height:70px!important;animation:none!important}
+  #about.section{padding:30px 22px!important;border-radius:18px!important}
+  #about.split{grid-template-columns:1fr!important;gap:22px!important}
+  #about .copy{align-self:auto!important}
+}
