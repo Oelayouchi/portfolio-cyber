@@ -1,0 +1,114 @@
+/* Final targeted correction for the cyber dashboard inside the hero. This is the only exception to the global 14px rule. */
+
+.availabilityV2Dashboard{
+  overflow:hidden!important;
+}
+
+.availabilityV2Card{
+  min-width:0!important;
+  overflow:hidden!important;
+  justify-content:flex-start!important;
+  padding:12px 10px 9px!important;
+}
+
+.cyberVisualCard{
+  justify-content:flex-start!important;
+  gap:6px!important;
+}
+
+/* Smaller headings, with less space before the diagrams. */
+.cyberVisualTitle{
+  flex:0 0 auto!important;
+  margin:0 0 3px!important;
+  min-height:0!important;
+  color:#cfe3f8!important;
+  font-size:11px!important;
+  line-height:1.15!important;
+  letter-spacing:.07em!important;
+  white-space:normal!important;
+}
+
+.networkMap,
+.shieldScene{
+  flex:1 1 auto!important;
+  min-height:0!important;
+  height:94px!important;
+  margin:0 auto!important;
+}
+
+.socConsole{
+  width:min(96%,220px)!important;
+  margin:1px auto 0!important;
+  padding:7px 8px!important;
+}
+.socConsoleTop{
+  margin-bottom:5px!important;
+  padding-bottom:4px!important;
+}
+.socConsoleTop span{
+  font-size:8px!important;
+  line-height:1.15!important;
+}
+.socConsole p{
+  margin:3px 0!important;
+  font-size:7.8px!important;
+  line-height:1.2!important;
+}
+
+/* Reduce node/tag text so nothing escapes the dashboard. */
+.networkNode{
+  width:36px!important;
+  height:36px!important;
+  font-size:8px!important;
+  line-height:1!important;
+}
+.nodePc,.nodeServer{
+  width:31px!important;
+  height:25px!important;
+  font-size:7px!important;
+}
+.shieldTag{
+  padding:3px 6px!important;
+  font-size:7.5px!important;
+  line-height:1.05!important;
+}
+.shieldIcon{
+  width:64px!important;
+  height:74px!important;
+}
+
+/* Footer technology pills stay inside the bottom of each column. */
+.cyberVisualFooter{
+  flex:0 0 auto!important;
+  gap:4px!important;
+  margin-top:2px!important;
+  padding:0 2px!important;
+  overflow:hidden!important;
+}
+.cyberVisualFooter span{
+  padding:2px 5px!important;
+  font-size:7.5px!important;
+  line-height:1.1!important;
+  white-space:nowrap!important;
+}
+
+/* Keep all animated parts inside their own cell. */
+.networkMap,.shieldScene,.socConsole,.cyberVisualFooter{
+  max-width:100%!important;
+}
+
+@media(max-width:1180px) and (min-width:761px){
+  .cyberVisualTitle{font-size:10px!important}
+  .cyberVisualFooter span{font-size:7px!important}
+  .networkMap,.shieldScene{height:88px!important}
+}
+
+@media(max-width:760px){
+  .availabilityV2Card{padding:8px 4px 6px!important}
+  .cyberVisualTitle{font-size:8px!important;margin-bottom:2px!important}
+  .cyberVisualFooter span{font-size:6px!important;padding:2px 3px!important}
+  .socConsoleTop span{font-size:6px!important}
+  .socConsole p{font-size:5.8px!important}
+  .networkNode{font-size:6px!important}
+  .shieldTag{font-size:5.5px!important}
+}
