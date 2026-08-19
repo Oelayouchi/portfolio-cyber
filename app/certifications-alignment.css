@@ -1,0 +1,10 @@
+/* Certifications — strict visual alignment */
+#certifications .certs{align-items:stretch;grid-auto-rows:1fr}
+#certifications .cert{display:grid;height:100%;grid-template-rows:252px minmax(226px,1fr);overflow:hidden}
+#certifications .cert>img{display:block;width:100%;height:252px;aspect-ratio:auto;object-fit:cover;object-position:center top;background:#fff}
+#certifications .cert>div{display:grid;grid-template-rows:minmax(58px,auto) 30px minmax(60px,1fr);align-content:start;gap:10px;padding:28px 20px 24px}
+#certifications .cert h3{display:flex;align-items:flex-start;min-height:58px;margin:0;font-size:20px;line-height:1.25}
+#certifications .cert .meta{display:flex;align-items:center;min-height:30px;margin:0;color:#75a6dd;font-size:14px;line-height:1.35}
+#certifications .cert>div>p:last-child{min-height:60px;margin:0;color:#a7b7ca;font-size:15px;line-height:1.55}
+@media(max-width:1050px){#certifications .cert{grid-template-rows:230px minmax(220px,1fr)}#certifications .cert>img{height:230px}#certifications .cert>div{padding:22px 18px 22px}}
+@media(max-width:760px){#certifications .certs{grid-auto-rows:auto}#certifications .cert{grid-template-rows:auto auto;min-height:0}#certifications .cert>img{height:auto;aspect-ratio:16/10;object-fit:cover}#certifications .cert>div{grid-template-rows:auto auto auto;gap:9px;padding:20px}#certifications .cert h3,#certifications .cert .meta,#certifications .cert>div>p:last-child{min-height:0}}
