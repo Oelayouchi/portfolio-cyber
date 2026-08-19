@@ -1,0 +1,100 @@
+/* Final targeted polish: hero, about, tools/career overview only. */
+
+/* 1) HERO — keep current theme, fix clipping, proportions and vertical density. */
+.homeHero{padding:28px 0 24px!important}
+.homeHeroShell{gap:18px!important}
+.homeHeroMain{grid-template-columns:minmax(230px,.68fr) minmax(430px,1.32fr) minmax(240px,.65fr)!important;gap:18px!important;align-items:stretch!important}
+.homeIdentityVisual{min-height:205px!important;padding:14px!important}
+.homeIdentityVisual img{width:min(100%,190px)!important;max-height:190px!important;object-fit:cover!important}
+.homeIdentityCopy{gap:4px!important;padding:15px 18px!important}
+.homeIdentityCopy strong{font-size:15px!important}
+.homeIdentityCopy span{font-size:11.5px!important}
+.homeIdentityCopy p{margin-top:6px!important;font-size:10.5px!important;line-height:1.48!important}
+.homeHeroIntro{justify-content:center!important}
+.homeHeroIntro h1{margin:2px 0 14px!important;font-size:clamp(46px,5vw,76px)!important;line-height:.92!important;letter-spacing:-.05em!important}
+.homeHeroIntro>p{max-width:680px!important;font-size:clamp(14px,1.2vw,18px)!important;line-height:1.5!important}
+.homeHeroActions{gap:10px!important;margin-top:18px!important}
+.homeHeroActions .button{min-height:44px!important;padding:0 17px!important;font-size:12px!important}
+.availabilityV2Wrap{gap:10px!important;margin-top:16px!important;padding-top:0!important}
+.availabilityV2Banner{min-height:58px!important;border-radius:15px!important;padding:0 15px!important}
+.availabilityV2Banner strong{font-size:13px!important}
+.availabilityV2Search{width:38px!important;height:38px!important}
+.availabilityV2Dashboard{height:156px!important;border-radius:15px!important}
+.availabilityV2Card{padding:8px!important}
+.homeHighlights{gap:10px!important;grid-template-rows:repeat(3,minmax(0,1fr))!important}
+.homeHighlightCard{padding:14px!important;border-radius:15px!important}
+.homeHighlightCard strong{font-size:clamp(26px,2.5vw,36px)!important}
+.homeHighlightCard span{margin-top:6px!important;font-size:10.5px!important}
+.homeHighlightCard small{font-size:9px!important;line-height:1.4!important}
+
+/* 2) TOOLS + CAREER OVERVIEW — strict alignment and no native scrollbar. */
+.homeTools{border-radius:14px!important;scrollbar-width:none!important;-ms-overflow-style:none!important}
+.homeTools::-webkit-scrollbar{display:none!important}
+.homeTool{min-width:105px!important;gap:7px!important;padding:11px 8px!important}
+.homeToolLogo{width:42px!important;height:42px!important}
+.homeToolLogo svg{width:26px!important;height:26px!important}
+.homeTool strong{font-size:10.5px!important}
+.homeCareer{padding:20px 22px 22px!important;border-radius:17px!important}
+.homeCareerTitle h2{margin:4px 0 16px!important;font-size:22px!important}
+.homeCareerLine{gap:12px!important;grid-template-columns:repeat(5,minmax(0,1fr))!important}
+.homeCareerItem{min-height:205px!important;padding:16px 12px 14px!important;border-radius:15px!important}
+.homeCareerLogo{height:62px!important;min-height:62px!important;margin-bottom:8px!important}
+.homeCareerLogo img{width:135px!important;max-height:52px!important;object-fit:contain!important}
+.homeCareerItem small{min-height:24px!important;margin:0 0 4px!important;padding:4px 8px!important}
+.homeCareerItem strong{min-height:38px!important;display:flex!important;align-items:center!important;justify-content:center!important;margin:0!important;font-size:14px!important;line-height:1.2!important}
+.homeCareerItem p{min-height:46px!important;display:flex!important;align-items:flex-start!important;justify-content:center!important;margin:4px 0 6px!important;font-size:10.5px!important;line-height:1.35!important}
+.homeCareerItem em{min-height:30px!important;display:flex!important;align-items:flex-end!important;justify-content:center!important;font-size:9px!important;line-height:1.35!important}
+.homeCareerSearch .homeCareerLogo{height:62px!important;min-height:62px!important}
+.homeSearchLogo{width:50px!important;height:50px!important}
+.homeSearchLogo svg{width:29px!important;height:29px!important}
+.homeCareerSearch strong{font-size:15px!important}
+.homeCareerStages{padding:14px 11px!important}
+.homeCareerStages>strong{min-height:38px!important;margin:0 0 7px!important;font-size:15px!important}
+.homeStageList{gap:6px!important}
+.homeStageList a{grid-template-columns:38px minmax(0,1fr)!important;gap:7px!important;padding:6px 7px!important}
+.homeStageList img{width:36px!important;height:22px!important}
+.homeStageList b{font-size:9px!important;text-overflow:clip!important;overflow:visible!important}
+.homeStageList small{font-size:8px!important}
+
+/* 3) ABOUT — compact 2-column composition with balanced typography. */
+#about.section{padding-top:52px!important;padding-bottom:52px!important}
+#about.split{grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr)!important;gap:72px!important;align-items:center!important}
+#about h2{max-width:570px!important;margin:8px 0 0!important;font-size:clamp(42px,4.45vw,64px)!important;line-height:1.02!important;letter-spacing:-.045em!important}
+#about .copy{align-self:center!important;max-width:590px!important}
+#about .copy p{font-size:15px!important;line-height:1.65!important}
+#about .copy p+p{margin-top:18px!important}
+
+@media(max-width:1180px){
+  .homeHeroMain{grid-template-columns:minmax(210px,.72fr) minmax(0,1.35fr)!important}
+  .homeHighlights{grid-column:1/-1!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;grid-template-rows:1fr!important}
+  .homeHighlightCard:nth-child(5){grid-column:auto!important}
+  .homeCareerLine{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+  #about.split{gap:44px!important}
+}
+
+@media(max-width:760px){
+  .homeHero{padding:18px 0 16px!important}
+  .homeHeroMain{grid-template-columns:1fr!important;gap:14px!important}
+  .homeIdentityCard{grid-template-columns:84px minmax(0,1fr)!important}
+  .homeIdentityVisual{min-height:0!important;padding:10px!important}
+  .homeIdentityVisual img{width:68px!important;height:68px!important}
+  .homeIdentityCopy{padding:12px 14px!important}
+  .homeIdentityCopy p{display:none!important}
+  .homeHeroIntro h1{font-size:clamp(42px,13vw,62px)!important;margin:2px 0 12px!important}
+  .homeHeroIntro>p{font-size:13px!important}
+  .homeHeroActions{margin-top:14px!important}
+  .availabilityV2Dashboard{height:145px!important}
+  .homeHighlights{grid-template-columns:1fr 1fr!important;grid-template-rows:none!important}
+  .homeHighlightCard:nth-child(5){grid-column:1/-1!important}
+  .homeCareer{padding:16px 13px 18px!important}
+  .homeCareerLine{grid-template-columns:1fr!important}
+  .homeCareerItem{min-height:0!important;align-items:flex-start!important;text-align:left!important}
+  .homeCareerLogo{justify-content:flex-start!important}
+  .homeCareerItem strong,.homeCareerItem p,.homeCareerItem em{min-height:0!important;justify-content:flex-start!important}
+  .homeCareerStages>strong{text-align:left!important}
+  #about.section{padding-top:38px!important;padding-bottom:38px!important}
+  #about.split{grid-template-columns:1fr!important;gap:24px!important;align-items:start!important}
+  #about h2{font-size:clamp(34px,10vw,46px)!important;max-width:none!important}
+  #about .copy{max-width:none!important}
+  #about .copy p{font-size:14px!important;line-height:1.6!important}
+}
