@@ -1,42 +1,67 @@
-/* Compact report action — based on approved visual style #5. */
+/* Approved STYLE 5 — tiny terminal/file action shown in the reference. */
 .projectReportButton,
 .projectShowcaseButton{
+  position:relative!important;
   display:inline-flex!important;
   align-items:center!important;
   justify-content:center!important;
-  gap:8px!important;
+  gap:7px!important;
   width:auto!important;
-  min-width:118px!important;
-  min-height:34px!important;
-  height:34px!important;
-  padding:0 12px!important;
-  border:1px solid rgba(38,145,255,.72)!important;
-  border-radius:9px!important;
-  background:linear-gradient(180deg,rgba(13,40,70,.88),rgba(7,25,46,.94))!important;
-  box-shadow:inset 0 0 0 1px rgba(37,139,245,.08),0 0 12px rgba(0,127,255,.10)!important;
-  color:#55b5ff!important;
-  font-size:12px!important;
-  font-weight:800!important;
+  min-width:96px!important;
+  height:30px!important;
+  min-height:30px!important;
+  padding:0 9px!important;
+  border:1px solid rgba(35,112,169,.55)!important;
+  border-radius:6px!important;
+  background:linear-gradient(180deg,rgba(6,25,42,.96),rgba(4,17,31,.98))!important;
+  box-shadow:inset 0 1px 0 rgba(92,180,239,.035),0 5px 16px rgba(0,0,0,.20)!important;
+  color:#59baff!important;
+  font-size:10px!important;
+  font-weight:500!important;
   line-height:1!important;
-  letter-spacing:.015em!important;
+  letter-spacing:.02em!important;
   text-transform:none!important;
   white-space:nowrap!important;
   text-decoration:none!important;
-  transition:border-color .18s ease,background .18s ease,box-shadow .18s ease,transform .18s ease,color .18s ease!important;
+  transition:border-color .18s ease,color .18s ease,box-shadow .18s ease,transform .18s ease!important;
+}
+/* File/document glyph — reproduces the left icon of style 5 even when old markup uses a dot. */
+.projectReportButton:before,
+.projectShowcaseButton:before{
+  content:'▧'!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:12px!important;
+  height:12px!important;
+  color:#45b7ff!important;
+  font-size:11px!important;
+  font-weight:400!important;
+  line-height:1!important;
+}
+/* Arrow on the right, like the approved reference. */
+.projectReportButton:after,
+.projectShowcaseButton:after{
+  content:'→'!important;
+  margin-left:2px!important;
+  color:#5dbfff!important;
+  font-size:13px!important;
+  font-weight:400!important;
+  line-height:1!important;
 }
 .projectReportButton:hover,
 .projectShowcaseButton:hover{
   transform:translateY(-1px)!important;
-  border-color:#2c9fff!important;
-  background:linear-gradient(180deg,rgba(14,52,91,.96),rgba(7,31,58,.98))!important;
-  box-shadow:0 0 16px rgba(0,139,255,.22),inset 0 0 0 1px rgba(76,178,255,.10)!important;
-  color:#8dceff!important;
+  border-color:rgba(55,154,220,.78)!important;
+  color:#86d0ff!important;
+  box-shadow:0 0 12px rgba(0,135,220,.13),0 5px 16px rgba(0,0,0,.20)!important;
 }
 .projectReportButton:focus-visible,
-.projectShowcaseButton:focus-visible{outline:2px solid rgba(65,176,255,.75)!important;outline-offset:3px!important}
-.projectReportButton svg,
-.projectShowcaseButton svg{width:14px!important;height:14px!important;flex:0 0 14px!important}
-.projectReportPulse{width:6px!important;height:6px!important;flex:0 0 6px!important;box-shadow:0 0 8px rgba(72,181,255,.55)!important}
+.projectShowcaseButton:focus-visible{outline:1px solid rgba(72,180,244,.8)!important;outline-offset:2px!important}
+/* Hide the former white/blue pulse and any previous decorative icon. */
+.projectReportPulse{display:none!important}
+.projectReportButton>svg,
+.projectShowcaseButton>svg{display:none!important}
 @media(max-width:760px){
-  .projectReportButton,.projectShowcaseButton{min-width:112px!important;height:33px!important;min-height:33px!important;padding:0 11px!important;font-size:11.5px!important}
+  .projectReportButton,.projectShowcaseButton{min-width:92px!important;height:29px!important;min-height:29px!important;padding:0 8px!important;font-size:9.5px!important}
 }
