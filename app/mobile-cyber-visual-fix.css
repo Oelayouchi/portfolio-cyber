@@ -1,0 +1,84 @@
+/* Mobile-only visual repair based on iPhone screenshots. Keep desktop unchanged. */
+@media (max-width:760px){
+  html,body{max-width:100%;overflow-x:hidden!important}
+  .shell{width:calc(100% - 28px)!important;max-width:100%!important}
+
+  /* Header stays attached to the top of the webpage while scrolling / pull-to-refresh. */
+  .navBar{position:sticky!important;top:0!important;z-index:9999!important;width:100%!important;transform:none!important}
+  .nav{min-height:72px!important;padding:0!important}
+  .navRight{min-width:0!important;gap:8px!important}
+  .languageSelector{min-width:0!important}
+
+  /* Hero identity card: photo + copy centered and readable. */
+  .homeIdentityCard{display:grid!important;grid-template-columns:112px minmax(0,1fr)!important;align-items:center!important;overflow:hidden!important}
+  .homeIdentityVisual{display:grid!important;width:112px!important;min-width:112px!important;height:100%!important;min-height:190px!important;padding:12px!important;place-items:center!important}
+  .homeIdentityVisual img{display:block!important;width:82px!important;height:82px!important;max-width:82px!important;max-height:82px!important;margin:auto!important;object-fit:cover!important;object-position:center!important}
+  .homeIdentityCopy{display:flex!important;min-width:0!important;padding:18px 16px!important;flex-direction:column!important;justify-content:center!important;text-align:left!important}
+  .homeIdentityCopy strong,.homeIdentityCopy span,.homeIdentityCopy p{max-width:100%!important;overflow-wrap:anywhere!important}
+  .homeIdentityCopy p{display:block!important;margin:8px 0 0!important;font-size:12px!important;line-height:1.48!important}
+
+  /* Career overview: every company logo/text centered in its card. */
+  .homeCareerLine{grid-template-columns:1fr!important;gap:12px!important}
+  .homeCareerItem{display:flex!important;width:100%!important;min-width:0!important;padding:18px!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;text-align:center!important}
+  .homeCareerLogo{display:flex!important;width:100%!important;height:74px!important;min-height:74px!important;margin:0 auto 10px!important;align-items:center!important;justify-content:center!important}
+  .homeCareerLogo img{display:block!important;width:auto!important;max-width:min(230px,82%)!important;height:auto!important;max-height:62px!important;margin:auto!important;object-fit:contain!important;object-position:center!important}
+  .homeCareerItem small,.homeCareerItem strong,.homeCareerItem p,.homeCareerItem em{width:100%!important;justify-content:center!important;text-align:center!important}
+  .homeCareerSearch .homeCareerLogo{height:74px!important;min-height:74px!important}
+  .homeSearchLogo{margin:auto!important}
+  .homeCareerStages{text-align:left!important}
+
+  /* Detailed experience pages/cards: centered logo and no content pushed outside. */
+  .experience{width:100%!important;max-width:100%!important;overflow:hidden!important}
+  .experienceBody{min-width:0!important;padding:20px 18px!important}
+  .experienceTopRow,.experienceTopActions{width:100%!important;min-width:0!important}
+  .experienceIdentity{width:100%!important;min-width:0!important;flex-direction:column!important;align-items:center!important;text-align:center!important}
+  .experienceLogoInline{display:grid!important;width:min(220px,70%)!important;height:112px!important;margin:0 auto 12px!important;padding:14px!important;place-items:center!important}
+  .experienceLogoInline img{display:block!important;width:auto!important;max-width:100%!important;height:auto!important;max-height:82px!important;margin:auto!important;object-fit:contain!important;object-position:center!important}
+  .experienceIdentity>div{width:100%!important;min-width:0!important;text-align:center!important}
+  .experienceIdentity h3,.experienceDepartment{width:100%!important;text-align:center!important;overflow-wrap:anywhere!important}
+  .experienceTopActions{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:12px!important;text-align:center!important}
+  .experienceMetaTop{width:100%!important;align-items:center!important;text-align:center!important}
+  .experienceReportButton,.projectReportButton{max-width:100%!important;margin:0 auto!important}
+  .experienceBody h4{text-align:left!important}
+  .experienceBlock,.experienceBlock li{overflow-wrap:anywhere!important}
+
+  /* Education logos are centered and cards cannot escape the viewport. */
+  .educationCardsGrid,.educationShowcaseCard{width:100%!important;max-width:100%!important;min-width:0!important}
+  .educationLogoPanel{display:grid!important;width:100%!important;place-items:center!important}
+  .educationLogoPanel img{display:block!important;width:auto!important;max-width:82%!important;height:auto!important;max-height:135px!important;margin:auto!important;object-fit:contain!important;object-position:center!important}
+  .educationShowcaseContent{min-width:0!important}
+  .educationShowcaseContent h3,.educationInstitution,.educationBullets p{overflow-wrap:anywhere!important}
+
+  /* Interest cards: compact enough for mobile and icon/text centered. */
+  .interestCardsGrid{grid-template-columns:1fr!important;gap:16px!important}
+  .interestCard{min-height:230px!important;padding:20px!important;text-align:center!important}
+  .interestIcon{min-height:130px!important;margin:auto!important;place-items:center!important;text-align:center!important}
+  .interestCard strong{width:100%!important;text-align:center!important}
+
+  /* Contact: never clip the subject/placeholder or buttons. */
+  .contactEnhanced,.contactFormPanel,.contactForm,.contactForm label{min-width:0!important;max-width:100%!important}
+  .contactFormPanel{padding:20px 16px!important;overflow:hidden!important}
+  .contactForm input,.contactForm textarea{min-width:0!important;max-width:100%!important;padding-left:14px!important;padding-right:14px!important;font-size:14px!important}
+  .contactForm input::placeholder,.contactForm textarea::placeholder{font-size:14px!important}
+  .contactQuickActions .button,.contactSubmitButton{max-width:100%!important;white-space:normal!important;text-align:center!important}
+
+  /* Generic mobile overflow guard for cards and buttons. */
+  .section,.dataPanel,.projectShowcaseCard,.cert,.contactFormPanel,#about.section{max-width:100%!important;min-width:0!important}
+  img,svg,canvas{max-width:100%}
+  .button{max-width:100%!important}
+}
+
+/* Light theme contrast repairs visible in the screenshots. */
+html[data-theme='light'] .homeIdentityCopy strong,
+html[data-theme='light'] .homeIdentityCopy span,
+html[data-theme='light'] .homeIdentityCopy p{color:#173f6e!important}
+html[data-theme='light'] #about.section{background:linear-gradient(145deg,#ffffff,#eef6ff)!important;border-color:#b8d3f2!important}
+html[data-theme='light'] #about h2{color:#0b1f3a!important}
+html[data-theme='light'] #about .copy p{color:#315d8c!important}
+html[data-theme='light'] .interestCard{background:linear-gradient(145deg,#ffffff,#eef6ff)!important;border-color:#a9c9e9!important}
+html[data-theme='light'] .interestCard strong{color:#0b1f3a!important}
+html[data-theme='light'] .contactFormPanel{background:#fff!important;border-color:#9fc3e8!important}
+html[data-theme='light'] .contactFormHeading h3,html[data-theme='light'] .contactForm label{color:#0b1f3a!important}
+html[data-theme='light'] .contactForm input,html[data-theme='light'] .contactForm textarea{background:#f5f9ff!important;border-color:#8fb7df!important;color:#0b1f3a!important}
+html[data-theme='light'] .contactForm input::placeholder,html[data-theme='light'] .contactForm textarea::placeholder{color:#6682a1!important;opacity:1!important}
+html[data-theme='light'] .contactLinkedinButton,html[data-theme='light'] .button.secondary{background:#fff!important;color:#0b4f91!important;border-color:#168cff!important}
