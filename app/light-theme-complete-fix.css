@@ -241,3 +241,86 @@ html[data-theme='light'] .footer{
     color:#3f5f80!important;
   }
 }
+
+/* 2026-08-20: keep the main header permanently visible while scrolling. */
+.navBar{
+  position:fixed!important;
+  top:0;
+  right:0;
+  left:0;
+  z-index:200!important;
+}
+body{padding-top:80px}
+
+/* The mobile menu must open directly below the fixed header. */
+.mobileMenu{z-index:199}
+
+/* Light mode: alternance/search popup must actually become a light window. */
+html[data-theme='light'] .alternanceBanner{
+  border-color:#9ec6ed!important;
+  background:radial-gradient(circle at 100% 0%,rgba(48,126,255,.10),transparent 42%),linear-gradient(145deg,#ffffff,#eef6ff)!important;
+  box-shadow:0 22px 55px rgba(31,85,135,.18),0 0 24px rgba(20,112,255,.08)!important;
+}
+html[data-theme='light'] .alternanceEyebrow{color:#1769b4!important}
+html[data-theme='light'] .alternanceContent strong{color:#0b1f3a!important}
+html[data-theme='light'] .alternanceContent p{color:#496784!important}
+html[data-theme='light'] .alternanceMinimize{
+  background:#ffffff!important;
+  border-color:#9ec6ed!important;
+  color:#174f8e!important;
+}
+html[data-theme='light'] .alternanceCta,
+html[data-theme='light'] .alternanceCta strong{
+  color:#ffffff!important;
+}
+html[data-theme='light'] .alternanceMini{
+  background:#f4fff9!important;
+  border-color:#31bd7a!important;
+  box-shadow:0 12px 32px rgba(31,85,135,.16),0 0 22px rgba(46,227,136,.18)!important;
+}
+
+/* Light mode: restore strong readable contrast inside the 3 cyber graphs. */
+html[data-theme='light'] .availabilityV2Dashboard,
+html[data-theme='light'] .availabilityV2Card{
+  background:linear-gradient(145deg,#ffffff,#edf6ff)!important;
+}
+html[data-theme='light'] .cyberVisualTitle{
+  color:#0d4f91!important;
+  opacity:1!important;
+}
+html[data-theme='light'] .networkNode{
+  background:#ffffff!important;
+  border-color:#77afe4!important;
+  color:#0b3f72!important;
+  box-shadow:0 4px 12px rgba(31,85,135,.10)!important;
+}
+html[data-theme='light'] .nodeFirewall{border-color:#24b873!important;color:#087a49!important}
+html[data-theme='light'] .nodeSoc{border-color:#8e67dc!important;color:#6135ad!important}
+html[data-theme='light'] .cyberVisualFooter span{
+  background:#eaf4ff!important;
+  border-color:#9bc5eb!important;
+  color:#0d5799!important;
+  opacity:1!important;
+}
+html[data-theme='light'] .socConsole{
+  background:#f8fbff!important;
+  border-color:#a9c9e8!important;
+  box-shadow:inset 0 0 18px rgba(31,117,255,.04)!important;
+}
+html[data-theme='light'] .socConsoleTop{border-color:#c9dcef!important}
+html[data-theme='light'] .socConsoleTop i{background:#6e8fac!important}
+html[data-theme='light'] .socConsoleTop span{color:#315d8c!important}
+html[data-theme='light'] .socConsole p{color:#355d82!important}
+html[data-theme='light'] .socConsole b{color:#087a49!important}
+html[data-theme='light'] .socConsole .socAlert{color:#b52b45!important;text-shadow:none!important}
+html[data-theme='light'] .socConsole .socAlert b{color:#b01836!important}
+html[data-theme='light'] .shieldTag{
+  background:#ffffff!important;
+  border-color:#9bc5eb!important;
+  color:#0d5799!important;
+}
+
+@media(max-width:760px){
+  body{padding-top:80px}
+  .navBar{transform:translateZ(0);will-change:transform}
+}
