@@ -1,0 +1,243 @@
+/* Complete LIGHT THEME repair — desktop + mobile. Loaded last on purpose. */
+html[data-theme='light']{
+  --bg:#f4f8ff!important;
+  --bg-deep:#eef5fc!important;
+  --panel:#ffffff!important;
+  --panel-2:#f6faff!important;
+  --text:#0b1f3a!important;
+  --muted:#58708d!important;
+  --line:#b8d3f2!important;
+}
+
+html[data-theme='light'] body{
+  background:linear-gradient(180deg,#f8fbff 0%,#edf5ff 100%)!important;
+  color:#0b1f3a!important;
+}
+
+/* Navbar + mobile menu */
+html[data-theme='light'] .navBar,
+html[data-theme='light'] .mobileMenu{
+  background:rgba(248,252,255,.98)!important;
+  border-color:#b8d3f2!important;
+  color:#0b1f3a!important;
+}
+html[data-theme='light'] .brand,
+html[data-theme='light'] .navlinks a,
+html[data-theme='light'] .mobileMenuInner a{color:#0b1f3a!important}
+html[data-theme='light'] .mobileMenuButton{background:#ffffff!important;border-color:#82b6ea!important}
+html[data-theme='light'] .mobileMenuButton span{background:#0b1f3a!important}
+html[data-theme='light'] .themeToggle{background:#eaf4ff!important;border-color:#8eb9e6!important}
+html[data-theme='light'] .themeToggle>span{color:#245d93!important}
+
+/* Main cards/windows */
+html[data-theme='light'] .homeIdentityCard,
+html[data-theme='light'] .homeHighlightCard,
+html[data-theme='light'] .homeTools,
+html[data-theme='light'] .homeCareer,
+html[data-theme='light'] .homeCareerItem,
+html[data-theme='light'] .experience,
+html[data-theme='light'] .cert,
+html[data-theme='light'] .educationShowcaseCard,
+html[data-theme='light'] .projectShowcaseCard,
+html[data-theme='light'] .dataPanel,
+html[data-theme='light'] .contactFormPanel,
+html[data-theme='light'] #about.section,
+html[data-theme='light'] .interestCard,
+html[data-theme='light'] .availabilityV2Banner,
+html[data-theme='light'] .availabilityV2Dashboard,
+html[data-theme='light'] .availabilityV2Card,
+html[data-theme='light'] .homeCareerStages,
+html[data-theme='light'] .homeStageList a{
+  background:linear-gradient(145deg,#ffffff,#f2f7fd)!important;
+  border-color:#b8d3f2!important;
+  color:#0b1f3a!important;
+  box-shadow:0 12px 32px rgba(31,85,135,.10)!important;
+}
+
+/* Prevent old dark overlays from surviving in light mode */
+html[data-theme='light'] .homeHero,
+html[data-theme='light'] .educationInterestsShowcase,
+html[data-theme='light'] .interestsShowcase,
+html[data-theme='light'] .section{
+  color:#0b1f3a!important;
+}
+
+/* Text hierarchy */
+html[data-theme='light'] h1,
+html[data-theme='light'] h2,
+html[data-theme='light'] h3,
+html[data-theme='light'] h4,
+html[data-theme='light'] h5,
+html[data-theme='light'] h6,
+html[data-theme='light'] strong,
+html[data-theme='light'] b{
+  color:#0b1f3a!important;
+}
+html[data-theme='light'] p,
+html[data-theme='light'] li,
+html[data-theme='light'] .copy,
+html[data-theme='light'] .experienceDepartment,
+html[data-theme='light'] .experienceMetaTop,
+html[data-theme='light'] .educationBullets p,
+html[data-theme='light'] .projectShowcaseObjective,
+html[data-theme='light'] .projectShowcaseContent li,
+html[data-theme='light'] .cert p,
+html[data-theme='light'] .contactIntro>p,
+html[data-theme='light'] .homeCareerItem p,
+html[data-theme='light'] .homeCareerItem em,
+html[data-theme='light'] .homeHighlightCard small,
+html[data-theme='light'] .homeTool strong,
+html[data-theme='light'] .homeIdentityCopy p,
+html[data-theme='light'] .homeIdentityCopy span{
+  color:#496784!important;
+}
+html[data-theme='light'] .eyebrow,
+html[data-theme='light'] .mini,
+html[data-theme='light'] .experienceBlock h5,
+html[data-theme='light'] .contactFormHeading>span,
+html[data-theme='light'] .educationInstitution,
+html[data-theme='light'] .projectShowcaseTags span{
+  color:#1769b4!important;
+}
+
+/* Hero */
+html[data-theme='light'] .homeHeroIntro h1,
+html[data-theme='light'] .homeHeroIntro>p,
+html[data-theme='light'] .homeIdentityCopy strong,
+html[data-theme='light'] .homeCareerTitle h2,
+html[data-theme='light'] .homeCareerItem strong,
+html[data-theme='light'] .homeHighlightCard strong,
+html[data-theme='light'] .homeHighlightCard span,
+html[data-theme='light'] .homeTool strong{
+  color:#0b1f3a!important;
+}
+html[data-theme='light'] .homeIdentityVisual{background:#edf6ff!important}
+
+/* Experience details */
+html[data-theme='light'] .experienceLogoInline{background:#ffffff!important;border:1px solid #c8dcef!important}
+html[data-theme='light'] .experienceBlock{border-color:#d5e4f3!important}
+html[data-theme='light'] .experienceMetaTop strong{color:#173f6e!important}
+html[data-theme='light'] .projectReportButton,
+html[data-theme='light'] .experienceReportButton{
+  background:#ffffff!important;
+  border-color:#168cff!important;
+  color:#075a9f!important;
+  box-shadow:none!important;
+}
+
+/* Education */
+html[data-theme='light'] .educationLogoPanel{background:#ffffff!important}
+html[data-theme='light'] .educationShowcaseContent h3{color:#0b1f3a!important}
+html[data-theme='light'] .educationYearBadge{color:#ffffff!important}
+
+/* Interests */
+html[data-theme='light'] .interestCard{background:radial-gradient(circle at 50% 42%,rgba(32,122,255,.08),transparent 35%),linear-gradient(180deg,#ffffff,#eef6ff)!important}
+html[data-theme='light'] .interestCard strong{color:#0b1f3a!important}
+
+/* Projects */
+html[data-theme='light'] .projectShowcaseCard,
+html[data-theme='light'] .projectShowcaseContent{
+  color:#0b1f3a!important;
+}
+html[data-theme='light'] .projectShowcaseButton{
+  background:#ffffff!important;
+  border-color:#168cff!important;
+  color:#075a9f!important;
+}
+
+/* About */
+html[data-theme='light'] #about.section{
+  background:linear-gradient(145deg,#ffffff,#eef6ff)!important;
+}
+html[data-theme='light'] #about h2{color:#0b1f3a!important}
+html[data-theme='light'] #about .copy p{color:#315d8c!important}
+
+/* Contact form */
+html[data-theme='light'] .contactFormHeading h3,
+html[data-theme='light'] .contactForm label{color:#0b1f3a!important}
+html[data-theme='light'] .contactForm input,
+html[data-theme='light'] .contactForm textarea{
+  background:#f8fbff!important;
+  border-color:#9dbfe1!important;
+  color:#0b1f3a!important;
+}
+html[data-theme='light'] .contactForm input::placeholder,
+html[data-theme='light'] .contactForm textarea::placeholder{
+  color:#617d9a!important;
+  opacity:1!important;
+}
+html[data-theme='light'] .contactForm input:focus,
+html[data-theme='light'] .contactForm textarea:focus{
+  background:#ffffff!important;
+  border-color:#1499ff!important;
+}
+
+/* Buttons */
+html[data-theme='light'] .button.secondary,
+html[data-theme='light'] .contactLinkedinButton,
+html[data-theme='light'] .allProjectsBack{
+  background:#ffffff!important;
+  color:#075a9f!important;
+  border-color:#168cff!important;
+}
+html[data-theme='light'] .button.primary,
+html[data-theme='light'] .contactSubmitButton{
+  color:#ffffff!important;
+}
+
+/* Tools / pills / small rows */
+html[data-theme='light'] .tags span,
+html[data-theme='light'] .projectShowcaseTags span{
+  background:#eef6ff!important;
+  border-color:#b5d2ef!important;
+  color:#205d98!important;
+}
+html[data-theme='light'] .homeToolLogo,
+html[data-theme='light'] .homeSearchLogo{
+  background:#eaf4ff!important;
+  border-color:#a8c9ea!important;
+  color:#168cff!important;
+}
+html[data-theme='light'] .homeStageList a b{color:#0b1f3a!important}
+html[data-theme='light'] .homeStageList a small{color:#58708d!important}
+
+/* Modals/report windows */
+html[data-theme='light'] .projectModal,
+html[data-theme='light'] .reportModal{
+  color:#0b1f3a!important;
+}
+html[data-theme='light'] .reportModal{
+  background:#ffffff!important;
+  border-color:#b8d3f2!important;
+}
+html[data-theme='light'] .reportModalHeader{
+  background:#f4f9ff!important;
+  color:#0b1f3a!important;
+  border-color:#c4dbf2!important;
+}
+html[data-theme='light'] .reportModalHeader strong{color:#0b1f3a!important}
+
+/* Footer */
+html[data-theme='light'] .footer{
+  color:#58708d!important;
+  border-color:#c6dbee!important;
+}
+
+/* Mobile-specific contrast guard */
+@media(max-width:760px){
+  html[data-theme='light'] .homeCareerItem,
+  html[data-theme='light'] .educationShowcaseCard,
+  html[data-theme='light'] .interestCard,
+  html[data-theme='light'] .experience,
+  html[data-theme='light'] .contactFormPanel,
+  html[data-theme='light'] #about.section{
+    background:#ffffff!important;
+  }
+  html[data-theme='light'] .homeIdentityCopy p,
+  html[data-theme='light'] .homeCareerItem p,
+  html[data-theme='light'] .experience li,
+  html[data-theme='light'] .educationBullets p,
+  html[data-theme='light'] .contactIntro>p{
+    color:#3f5f80!important;
+  }
+}
