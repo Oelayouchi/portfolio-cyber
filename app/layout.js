@@ -33,6 +33,7 @@ import './final-project-cyber-education-fixes.css';
 import './hero-overflow-logo-fix.css';
 import './hero-dashboard-compact-fix.css';
 import './report-button-style5.css';
+import './mobile-cyber-visual-fix.css';
 
 export const metadata = {
   title: 'Oussama EL AYOUCHI — Portfolio Cybersécurité',
